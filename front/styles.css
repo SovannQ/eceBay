@@ -1,18 +1,125 @@
-<style>
-/* Remove the navbar's default rounded borders and increase the bottom margin */
+body {
+	padding: 0px;
+	margin: 0px;
+	background: lightblue;
+}
+/*--- navigation bar ---*/
 .navbar {
-    margin-bottom: 50px;
-    border-radius: 0;
+	background:black;
+}
+.nav-link, .navbar-brand {
+	color: white;
+	cursor: pointer;
+}
+.nav-link {
+	margin-right: 1em !important;
+}
+.nav-link:hover {
+	color: #85c8e2;
+}
+.navbar-collapse {
+	justify-content: flex-end;
 }
 
-/* Remove the jumbotron's default bottom margin */
-.jumbotron {
-    margin-bottom: 0;
+.header {
+
+	background-size: cover;
+	background-position: center;
+	position: relative;
 }
 
-/* Add a gray background color and some padding to the footer */
-footer {
-    background-color: #ffffff;
-    padding: 25px;
+.overlay {
+ position: absolute;
+ min-height: 100%;
+ min-width: 100%;
+ left: 0px;
+ top: 0px;
+ background-color: rgba(0, 0, 0, 0.3);
 }
-</style>
+
+.description {
+ left: 50%;
+ position: absolute;
+ top: 25%;
+ transform: translate(-50%, -50%);
+ text-align: center;
+}
+.description h1 {
+ color: #FFFFFF;
+ font-size: 200px;
+}
+
+.description p {
+ color: #fff;
+ font-size: 1.3rem;
+ line-height: 1.5;
+}
+
+.description button {
+ border:1px solid #b30000;
+ background-color: #b30000;
+ border-radius: 1;
+ color: #fff;
+}
+.description button:hover {
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000;
+}
+
+.vid{
+	position: center;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.features {
+
+color: #ffffff;
+ margin: 4em auto;
+  padding: 1em;
+ position: relative;
+}
+.feature-title {
+ color: #ffffff;
+ font-size: 1.3rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-transform: uppercase;
+}
+.features img {
+ -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+ -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+ box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+ margin-bottom: 16px;
+}
+
+.features .form-control,
+.features input {
+ border-radius: 1;
+}
+.features .btn {
+ background-color: #b30000;
+ border: 1px solid #b30000;
+ color: #ffffff;
+ margin-top: 20px;
+ border-radius: 1;
+}
+.features .btn:hover {
+ background-color: #333;
+ border: 1px solid #333;
+}
+
+.page-footer {
+ background-color: #000;
+ color: #ccc;
+ padding: 60px 0 30px;
+}
+.footer-copyright {
+ color: #666;
+ padding: 40px 0;
+}
+
+
