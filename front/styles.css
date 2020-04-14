@@ -34,7 +34,13 @@ body {
 
 }
 
-.carousel-item {
+.carousel-item p {
+
+	text-align: center;
+
+}
+
+.carousel-item h5 {
 
 	text-align: center;
 
