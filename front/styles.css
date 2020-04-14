@@ -28,6 +28,18 @@ body {
 	position: relative;
 }
 
+.carousel-item {
+
+	width: 50%;
+
+}
+
+.carousel-item {
+
+	text-align: center;
+
+}
+
 .overlay {
  position: absolute;
  min-height: 100%;
