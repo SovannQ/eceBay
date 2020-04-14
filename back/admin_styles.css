@@ -15,3 +15,15 @@
 .navbar-collapse {
 	justify-content: flex-end;
 }
+
+.col-md-4 {
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col-md-6 {
+
+    margin-left: auto;
+    margin-right: auto;
+}

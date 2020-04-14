@@ -1,5 +1,5 @@
 <?php
-    include  'admin_crud.php';
+    include  'admin_crud_vendeur.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +19,9 @@
 <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="#"><img src="akatsuki.png" alt="Logo" style="width: 40px"></a>
+        <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-            <span class="navbar-toggler-icon"><img src="akatsuki.png" alt="Logo" style="width: 40px"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="navbar-nav">
@@ -32,34 +32,43 @@
         </div>
     </nav>
 
-    <!-- Main part-->
+    <!-- VENDEUR-->
     <div class="container-fluid">
 
         <div class="row">
 
-            <!-- Ajouter un vendeur dans la table vendeur-->
+            <!-- Ajouter.modifier un vendeur dans la table vendeur-->
             <div class="col-md-4">
-                <h2 class="text-center">Ajouter un vendeur</h2>
-                <form action="admin_crud.php" method="post">
+
+                <h2 class="text-center">Ajouter/modifier un vendeur</h2>
+                <form action="admin_crud_vendeur.php" method="post">
+                    <input type="hidden" name="id_vendeur" value="<?= $id_vendeur; ?>">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nom" name="nom_vendeur">
+                        <input type="text" class="form-control" placeholder="Nom" name="nom_vendeur"
+                            value="<?= $nom_vendeur; ?>">
                     </div>
 
                     <div class="form-group">
-                        <input type="mail" class="form-control" placeholder="Mail" name="mail">
+                        <input type="mail" class="form-control" placeholder="Mail" name="mail" value="<?= $mail; ?>">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Mot de passe" name="mdp">
+                        <input type="password" class="form-control" placeholder="Mot de passe" name="mdp"
+                            value="<?= $mdp; ?>">
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary btn-dark btn-lg btn-block" value="Ajouter"
+                        <?php if($updated==true) { ?>
+                        <input type="submit" class="btn btn-info btn-block" value="Mettre à jour" name="updated">
+                        <?php } else { ?>
+                        <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
                             name="ajouter_vendeur">
+                        <?php } ?>
                     </div>
 
                 </form>
+
             </div>
 
             <!-- DB Vendeur -->
@@ -93,10 +102,9 @@
                             <td><?= $row['mdp'];?></td>
 
                             <td>
-
-                                <button type="button" class="badge badge-info" data-toggle="modal" data-target="#myModal">Modifier</button>
-
-                                <a href="admin_crud.php?delete=<?=$row['id_vendeur']; ?>"
+                                <a href="admin.php?edit=<?= $row['id_vendeur']; ?>"
+                                    class="badge badge-primary">modifier</a>
+                                <a href="admin_crud_vendeur.php?delete=<?=$row['id_vendeur']; ?>"
                                     class="badge badge-danger">Supprimer</a>
                             </td>
                         </tr>
@@ -108,40 +116,8 @@
         </div>
 
 
-        <!-- Modal popup with boostrap -->
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modifier le vendeur</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-
-
 
         <!-- ACHETEUR  -->
-        <div class="row">
-
-            <div class="col-md-4">
-                <h2>Ajouter un acheteur</h2>
-            </div>
-
-        </div>
-
     </div>
 
 
