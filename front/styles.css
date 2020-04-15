@@ -2,10 +2,10 @@ body {
 	padding: 0px;
 	margin: 0px;
 	background-color:white;
-	background-image:url(salon.jpeg); 
+	background-image:url(salon.jpg); 
 	background-repeat: no-repeat;
 	  background-attachment: fixed;
-	  background-size: 1200px;
+	  background-size: 1500px;
 
 	
 }
@@ -30,12 +30,6 @@ body {
 }
 
 
-<<<<<<< HEAD
-=======
-	background-size: cover;
-	background-position: center;
-	position: relative;
-}
 .carousel{
 	width: 50%;
 	margin-left: auto;
@@ -70,7 +64,6 @@ body {
 	margin-left: auto;
 	float: right;	
 }
->>>>>>> refs/remotes/origin/master
 
 .overlay {
  position: absolute;

@@ -49,7 +49,6 @@
 
         <table align=center><tr>
             <div class= titre><p><br>Identification:</p></div>
-            <br>
                       
                       <td><input type="text" class="form-control" placeholder="Nom" name="nom"></td>
                       
@@ -71,11 +70,22 @@
                     
            <table align=center><br><tr>
             <div class= titre><p><br>Domicile:</p></div>
-            <br>
             <td><input type="text" class="form-control" placeholder="Rue" name="rue"></td>
-            <td><input type="text" class="form-control" placeholder="Ville" name="ville"></td>
+            <td><input type="text" class="form-control" placeholder="Ville" name="ville"></td></tr><tr>
             <td><input type="number" class="form-control" placeholder="Code" name="codepostal"></td>
-             <td><input type="text" class="form-control" placeholder="Pays" name="pays"></td>
+             <td><input type="text" class="form-control" placeholder="Pays" name="pays"></td></tr>
+        </table>
+        <br>
+        <table align=center><br><tr>
+            <div class= titre><p><br>Information bancaire:</p></div></tr><tr>
+            <input type="radio"  name="classe" value="visa">Visa 
+            <input type="radio"  name="classe" value="mastercard">MasterCard
+            <input type="radio"  name="classe" value="americanexpress"> American Express</tr>
+            <br>
+            <td><input type="number" class="form-control" placeholder="N°de carte bancaire" name="numerocb"></td>
+            <td><input type="text" class="form-control" placeholder="Nom du propriétaire" name="ville"></td></tr><tr>
+            <td><input type="date" class="form-control" placeholder="Date expiration" name="dateexpiration"></td>
+             <td><input type="number" class="form-control" placeholder="CCV" name="ccv"></td></tr>
         </table>
         <br>
         <input type="checkbox" id="condition" name="condition" value="condition">
