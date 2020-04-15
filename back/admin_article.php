@@ -1,5 +1,5 @@
 <?php
-    include  'admin_crud_vendeur.php';
+    include  'admin_crud_article.php';
 ?>
 
 <!DOCTYPE html>
@@ -32,21 +32,24 @@
         </div>
     </nav>
 
-    <!-- VENDEUR-->
+    <!-- article-->
     <div class="container-fluid">
 
         <div class="row">
+            <div class="col pt-4">
+                <a href="admin_welcome.html"><button type="button" class="btn btn-secondary  btn-lg " name="b1">Retour menu</button></a> 
+                </div>
 
-            <!-- Ajouter.modifier un vendeur dans la table vendeur-->
+            <!-- Ajouter.modifier un article dans la table article-->
             <div class="col-md-4">
 
-                <h2 class="text-center">Ajouter/modifier un vendeur</h2>
-                <form action="admin_crud_vendeur.php" method="post">
-                    <input type="hidden" name="id_vendeur" value="<?= $id_vendeur; ?>">
+                <h2 class="text-center">Ajouter/modifier un article</h2>
+                <form action="admin_crud_article.php" method="post">
+                    <input type="hidden" name="id_article" value="<?= $id_article; ?>">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nom" name="nom_vendeur"
-                            value="<?= $nom_vendeur; ?>">
+                        <input type="text" class="form-control" placeholder="Nom" name="nom_article"
+                            value="<?= $nom_article; ?>">
                     </div>
 
                     <div class="form-group">
@@ -63,7 +66,7 @@
                         <input type="submit" class="btn btn-info btn-block" value="Mettre à jour" name="updated">
                         <?php } else { ?>
                         <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
-                            name="ajouter_vendeur">
+                            name="ajouter_article">
                         <?php } ?>
                     </div>
 
@@ -71,18 +74,18 @@
 
             </div>
 
-            <!-- DB Vendeur -->
+            <!-- DB article -->
 
             <div class="col-md-6">
 
                 <?php
-                $query="SELECT * from vendeur";
+                $query="SELECT * from article";
                 $statement=$connexion->prepare($query);
                 $statement->execute();
                 $result=$statement->get_result();
                 ?>
 
-                <h2 class="text-center">DB Vendeur</h2>
+                <h2 class="text-center">DB article</h2>
                 <table class="table table-striped ">
                     <thead>
                         <tr>
@@ -96,15 +99,15 @@
                     <tbody>
                         <?php while($row=$result->fetch_assoc()){ ?>
                         <tr>
-                            <td><?= $row['id_vendeur'];?></td>
-                            <td><?= $row['nom_vendeur'];?></td>
+                            <td><?= $row['id_article'];?></td>
+                            <td><?= $row['nom_article'];?></td>
                             <td><?= $row['mail'];?></td>
                             <td><?= $row['mdp'];?></td>
 
                             <td>
-                                <a href="admin.php?edit=<?= $row['id_vendeur']; ?>"
+                                <a href="admin_article.php?edit=<?= $row['id_article']; ?>"
                                     class="badge badge-primary">modifier</a>
-                                <a href="admin_crud_vendeur.php?delete=<?=$row['id_vendeur']; ?>"
+                                <a href="admin_crud_article.php?delete=<?=$row['id_article']; ?>"
                                     class="badge badge-danger">Supprimer</a>
                             </td>
                         </tr>
@@ -116,8 +119,6 @@
         </div>
 
 
-
-        <!-- ACHETEUR  -->
     </div>
 
 

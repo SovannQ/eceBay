@@ -1,7 +1,7 @@
 <?php
 
-    $id_vendeur="";
-    $nom_vendeur="";
+    $id_acheteur="";
+    $nom_acheteur="";
     $mail="";
     $mdp="";
     $updated=false;
@@ -17,27 +17,27 @@
 
     //Traitement 
 
-    if(isset($_POST['ajouter_vendeur'])){
+    if(isset($_POST['ajouter_acheteur'])){
 
-        $nom_vendeur=$_POST['nom_vendeur'];
+        $nom_acheteur=$_POST['nom_acheteur'];
         $mail=$_POST['mail'];
         $mdp=$_POST['mdp'];
 
-        $query="INSERT INTO vendeur(nom_vendeur,mail,mdp)VALUES(?,?,?)";
+        $query="INSERT INTO acheteur(nom_acheteur,mail,mdp)VALUES(?,?,?)";
         $statement=$connexion->prepare($query);
-        $statement->bind_param("sss",$nom_vendeur,$mail,$mdp);
+        $statement->bind_param("sss",$nom_acheteur,$mail,$mdp);
         $result = $statement->execute();
 
         //empêche la redirection vers un onglet vide après le traitement php
         if ($result)
         {
         // Successful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Successful - Vendeur ajouté!'); window.location.href = 'admin_vendeur.php';</script>";
+        echo "<script type='text/javascript'>alert('Successful - acheteur ajouté!'); window.location.href = 'admin_acheteur.php';</script>";
         }
         else
         {
         // Unsuccessful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_vendeur.php';</script>";
+        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_acheteur.php';</script>";
         }
 
         
@@ -47,7 +47,7 @@
 
     if(isset($_GET['delete'])){
         $id=$_GET['delete'];
-        $query="DELETE from vendeur where id_vendeur=?";
+        $query="DELETE from acheteur where id_acheteur=?";
         $statement =$connexion->prepare($query);
         $statement->bind_param("i",$id); //i est le type de id, c'est int donc i 
         $result=$statement->execute();
@@ -55,12 +55,12 @@
         if ($result)
         {
         // Successful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Successful - Record deleted!'); window.location.href = 'admin_vendeur.php';</script>";
+        echo "<script type='text/javascript'>alert('Successful - Record deleted!'); window.location.href = 'admin_acheteur.php';</script>";
         }
         else
         {
         // Unsuccessful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_vendeur.php';</script>";
+        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_acheteur.php';</script>";
         }
 
 
@@ -68,18 +68,18 @@
 
     if(isset($_GET['edit'])){
 
-        $id_vendeur=$_GET['edit'];
-        $query="SELECT * FROM vendeur WHERE id_vendeur=?";
+        $id_acheteur=$_GET['edit'];
+        $query="SELECT * FROM acheteur WHERE id_acheteur=?";
 
         $statement=$connexion->prepare($query);
-        $statement->bind_param("i",$id_vendeur);
+        $statement->bind_param("i",$id_acheteur);
         $statement->execute();
 
         $result=$statement->get_result();
         $row=$result->fetch_assoc();
 
-        $id_vendeur=$row['id_vendeur'];
-        $nom_vendeur=$row['nom_vendeur'];
+        $id_acheteur=$row['id_acheteur'];
+        $nom_acheteur=$row['nom_acheteur'];
         $mail=$row['mail'];
         $mdp=$row['mdp'];
 
@@ -89,25 +89,25 @@
 
     if(isset($_POST['updated'])){
 
-        $id_vendeur=$_POST['id_vendeur'];
-        $nom_vendeur=$_POST['nom_vendeur'];
+        $id_acheteur=$_POST['id_acheteur'];
+        $nom_acheteur=$_POST['nom_acheteur'];
         $mail=$_POST['mail'];
         $mdp=$_POST['mdp'];
 
-        $query = "UPDATE vendeur SET nom_vendeur=?, mail=?, mdp=? WHERE id_vendeur=?";
+        $query = "UPDATE acheteur SET nom_acheteur=?, mail=?, mdp=? WHERE id_acheteur=?";
         $statement=$connexion->prepare($query);
-        $statement->bind_param("sssi",$nom_vendeur,$mail,$mdp,$id_vendeur);
+        $statement->bind_param("sssi",$nom_acheteur,$mail,$mdp,$id_acheteur);
         $result = $statement->execute();
 
         if ($result)
         {
         // Successful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Successful - Record updated!'); window.location.href = 'admin_vendeur.php';</script>";
+        echo "<script type='text/javascript'>alert('Successful - Record updated!'); window.location.href = 'admin_acheteur.php';</script>";
         }
         else
         {
         // Unsuccessful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_vendeur.php';</script>";
+        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_acheteur.php';</script>";
         }
 
 
