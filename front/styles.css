@@ -2,6 +2,13 @@ body {
 	padding: 0px;
 	margin: 0px;
 	background-color: darkslategray;
+	background-color:white;
+	background-image:url(salon.jpeg); 
+	background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-size: 1200px;
+
+	
 }
 
 .fond{
@@ -24,13 +31,11 @@ body {
 	margin-right: 1em !important;
 }
 .nav-link:hover {
-	color: #85c8e2;
+	color: white;
 }
 .navbar-collapse {
 	justify-content: flex-end;
 }
-
-
 
 
 .carousel{
@@ -73,6 +78,14 @@ h1{
 
 
 
+.articles{
+	border: solid;
+	padding: 3%;
+	margin-bottom: 1%;
+	margin-left: auto;
+	float: right;	
+}
+
 
 .overlay {
  position: absolute;
@@ -80,7 +93,7 @@ h1{
  min-width: 100%;
  left: 0px;
  top: 0px;
- background-color: rgba(0, 0, 0, 0.3);
+ background-color: rgba(0, 0, 0, 0);
 }
 
 .description {
