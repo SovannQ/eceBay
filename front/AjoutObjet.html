@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Akatsuki Inc.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="Inscription.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+         
+    </script>
+    
+</head>
+
+<body>
+
+
+    <label for="weather">Select the weather type today: </label>
+    <select id="weather">
+      <option value="">--Make a choice--</option>
+      <option value="sunny">Sunny</option>
+      <option value="rainy">Rainy</option>
+      <option value="snowing">Snowing</option>
+      <option value="overcast">Overcast</option>
+    </select>
+
+    <form align=center>
+
+<table align=center><tr>
+<div class="ecriture"><td>Catégories de l'objet: </td> <td></div>
+<input type="radio"  name="classe" id="achati" value="achati">Achat immédiat <br>
+<input type="radio"  name="classe" id="bestoffer" value="bestoffer"> Meilleure offre  <br>
+<input type="radio"  name="classe" id="accessoire" value="accessoire">Accessoire VIP<br>   
+</td> </tr></table>
+
+
+    <label for="message">Description de l'objet</label>
+    <textarea name="message"  rows="7" cols="30"> </textarea>
+    
+<table align=center><tr>
+<div class="ecriture"><td>Type de vente souhaité:</td> <td></div>
+<input type="radio"  name="classe" id="achati" value="achati">Achat immédiat <br>
+<input type="radio"  name="classe" id="bestoffer" value="bestoffer"> Meilleure offre  <br>
+<input type="radio"  name="classe" id="enchere" value="enchere">Enchère<br>   
+</td> </tr></table>
+
+ <button type="submit" class="button soumettre" value="submit">Soumettre</button>
+
+
+    
+    </form>
+    <input type="button" onclick="myFunction()" id="myBtn" value="Try it">
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myBtn").value;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+    
+   
+
+
+</body>
+</html>
+

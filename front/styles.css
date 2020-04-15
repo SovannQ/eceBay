@@ -1,7 +1,13 @@
 body {
 	padding: 0px;
 	margin: 0px;
-	background: lightblue;
+	background-color:white;
+	background-image:url(salon.jpeg); 
+	background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-size: 1200px;
+
+	
 }
 /*--- navigation bar ---*/
 .navbar {
@@ -15,18 +21,13 @@ body {
 	margin-right: 1em !important;
 }
 .nav-link:hover {
-	color: #85c8e2;
+	color: white;
 }
 .navbar-collapse {
 	justify-content: flex-end;
 }
 
-.header {
 
-	background-size: cover;
-	background-position: center;
-	position: relative;
-}
 
 .overlay {
  position: absolute;
@@ -34,7 +35,7 @@ body {
  min-width: 100%;
  left: 0px;
  top: 0px;
- background-color: rgba(0, 0, 0, 0.3);
+ background-color: rgba(0, 0, 0, 0);
 }
 
 .description {
