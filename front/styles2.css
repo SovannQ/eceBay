@@ -1,6 +1,7 @@
 body {
 	padding: 0px;
 	margin: 0px;
+	background-color: darkslategray;
 	background-color:white;
 	background-image:url(salon.jpg); 
 	background-repeat: no-repeat;
@@ -9,6 +10,13 @@ body {
 
 	
 }
+
+.fond{
+	background-image:url(imagefond.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
 
 
 /*--- navigation bar ---*/
@@ -31,16 +39,34 @@ body {
 
 
 .carousel{
-	width: 50%;
+	width: 25%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 11%;
+	padding-top: 2%;
+	margin-bottom: 1%;
 }
 
+h1{
+	font-size: 400%;
+	color: black;
+	font-weight: bold;
+}
+
+.gauche{
+	float: left;
+	margin-left: 5%;
+}
+
+.titrecar{
+	text-align: center;
+	text-decoration: overline;
+	margin-bottom: 15%;
+	color: black;
+}
 
 .carousel-item p {
-
 	text-align: center;
-	padding-left: 200px;
 }
 
 .carousel-item h5 {
@@ -49,13 +75,8 @@ body {
 
 }
 
-.menuleft{
-	font-size: xx-large;
-	background-color: #000;
-	margin-bottom: auto;
-	margin-left: 1%;
-	float: left;
-}
+
+
 
 .articles{
 	border: solid;
@@ -64,6 +85,7 @@ body {
 	margin-left: auto;
 	float: right;	
 }
+
 
 .overlay {
  position: absolute;
@@ -82,12 +104,12 @@ body {
  text-align: center;
 }
 .description h1 {
- color: #FFFFFF;
+ color: black;
  font-size: 200px;
 }
 
 .description p {
- color: #fff;
+ color:black;
  font-size: 1.3rem;
  line-height: 1.5;
 }
