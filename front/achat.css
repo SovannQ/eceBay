@@ -1,13 +1,7 @@
 body {
 	padding: 0px;
 	margin: 0px;
-	background-color:white;
-	background-image:url(salon.jpeg); 
-	background-repeat: no-repeat;
-	  background-attachment: fixed;
-	  background-size: 1200px;
-
-	
+	background: lightblue;
 }
 
 
@@ -23,15 +17,14 @@ body {
 	margin-right: 1em !important;
 }
 .nav-link:hover {
-	color: white;
+	color: #85c8e2;
 }
 .navbar-collapse {
 	justify-content: flex-end;
 }
 
+.header {
 
-<<<<<<< HEAD
-=======
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -46,7 +39,7 @@ body {
 .carousel-item p {
 
 	text-align: center;
-	padding-left: 200px;
+
 }
 
 .carousel-item h5 {
@@ -57,10 +50,13 @@ body {
 
 .menuleft{
 	font-size: xx-large;
-	background-color: #000;
 	margin-bottom: auto;
-	margin-left: 1%;
-	float: left;
+	margin-left: auto;
+    float: left;
+}
+
+.menuleft a{
+    color: #000;
 }
 
 .articles{
@@ -68,9 +64,7 @@ body {
 	padding: 3%;
 	margin-bottom: 1%;
 	margin-left: auto;
-	float: right;	
 }
->>>>>>> refs/remotes/origin/master
 
 .overlay {
  position: absolute;
@@ -78,7 +72,17 @@ body {
  min-width: 100%;
  left: 0px;
  top: 0px;
- background-color: rgba(0, 0, 0, 0);
+ background-color: rgba(0, 0, 0, 0.3);
+}
+
+.img{
+    width: 30%;
+    height: 30%;
+    margin-left: 3%;
+}
+
+.main{
+    margin-top:2%;
 }
 
 .description {
