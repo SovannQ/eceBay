@@ -1,3 +1,8 @@
+<?php
+    include 'action.php';
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -100,8 +105,15 @@
       <div class="container">
         <h3 class="h3 titre">Items</h3>
 <!-- ARTICLES -->
+                <?php
+                $query="SELECT * from article";
+                $statement=$connexion->prepare($query);
+                $statement->execute();
+                $result=$statement->get_result();
+                ?>
         <div class="row bordure">
             <?php while($row=$result->fetch_assoc()){ ?>
+                <?php if($row['categorie'] == "musee"){ ?>
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid3">
                     <div class="product-image3">
@@ -117,126 +129,13 @@
                         <h3 class="title"><a href="#"><?= $row['nom_article'];?></a></h3>
                         <p><?= $row['description'];?></p>
                         <div class="price">
-                        <?= $row['prix'];?>
+                        <?= $row['prix'];?> euros
                         </div>
                     </div>
                 </div>
             </div>
             <?php } ?>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="images caroussel/pnl.jpg">
-                            <img class="pic-2" src="images caroussel/pnl2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Description</a></h3>
-                        <div class="price">
-                            $63.50
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="images caroussel/pnl.jpg">
-                            <img class="pic-2" src="images caroussel/pnl2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Description</a></h3>
-                        <div class="price">
-                            $63.50
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="images caroussel/pnl.jpg">
-                            <img class="pic-2" src="images caroussel/pnl2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Description</a></h3>
-                        <div class="price">
-                            $63.50
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="images caroussel/pnl.jpg">
-                            <img class="pic-2" src="images caroussel/pnl2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Description</a></h3>
-                        <div class="price">
-                            $63.50
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="images caroussel/pnl.jpg">
-                            <img class="pic-2" src="images caroussel/pnl2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Description</a></h3>
-                        <div class="price">
-                            $63.50
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="images caroussel/pnl.jpg">
-                            <img class="pic-2" src="images caroussel/pnl2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Description</a></h3>
-                        <div class="price">
-                            $63.50
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
     <hr>
