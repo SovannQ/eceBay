@@ -53,42 +53,7 @@
         <h1>Formulaire inscription Vendeur de ECEbay</h1>
     </div>
     <br>
-<<<<<<< HEAD:front/InscriptionVendeur.html
   
-        <table align=center><tr>
-            <div class= titre><p><br>Identification:</p></div>
-            <br>
-                      
-                      <td><input type="text" class="form-control" placeholder="Nom" name="nom"></td>
-                      
-                      <td><input type="text" class="form-control" placeholder="Prenom" name="prenom"></td>
-                   </tr></table>
-                   
-                   <form align=center>
-                    <div class="form-group ecriture">
-                    <br>
-                      <label>Email address: </label>
-                      <input type="email" class="form-control taille" name="mail" placeholder="Enter email">
-                    </div>
-            
-                    <div class="form-group ecriture">
-                      <label> Mot de passe: </label>
-                      <input type="password" class="form-control taille" name="mdp" placeholder="Password">
-                      <small id="emailHelp" class="form-text text-muted">Ne jamais transmettre ses identifiants à un tiers</small>
-                    </div>
-                    <br>
-
-        <input type="checkbox" id="condition" name="condition" value="condition">
-        <label for="condition"> <a href="https://www.youtube.com/watch?v=L_KikUmaAxg&list=RDMML_KikUmaAxg&start_radio=1">J'accepte les conditions utilisateur & contrat légal</a></label><br>
-
-        <button type="submit" class="button soumettre" name="soumettre_vendeur">Soumettre</button>
-
-        
-    </form>
-    </form></form>
-=======
-
-    
 
     <form action="inscrire.php" method="post" align=center>
 
@@ -109,7 +74,6 @@
             <label>Email address: </label>
             <input type="text" class="form-control taille" name="mail" placeholder="Enter email">
         </div>
->>>>>>> a4c2a55401031fb0e620bf0cff5f88a86873b62d:front/InscriptionVendeur.php
 
         <div class="form-group ecriture">
             <label> Mot de passe: </label>
