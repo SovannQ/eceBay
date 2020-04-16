@@ -8,7 +8,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="vendeur.css">
-    <title>Document</title>
+     <title>Document</title>
 </head>
 
 <body>
@@ -52,14 +52,17 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
                             alt="" />
                         <div class="file btn btn-lg btn-primary">
                             Changer la photo
-                            <input type="file" name="file" />
+                            <input type="file" name="photo">
+                            
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-md-6">
                     <div class="profile-head">
                         <h5>
@@ -178,7 +181,7 @@
            
         </form>
     </div>
-
+   
 </body>
 
 </html>
