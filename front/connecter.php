@@ -1,5 +1,5 @@
 <?php
-    session_start(); //ouvrir la session   
+    session_start(); //ouvrir la session    
     error_reporting(0);
 
     

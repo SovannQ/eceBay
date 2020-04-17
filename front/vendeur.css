@@ -6,7 +6,7 @@ body{
     margin-top: 5%;
     margin-bottom: 3%;
     border-radius: 0.5rem;
-    background:white;
+    background:rgb(255,255,255,0.6);
     width: auto;
     height: auto;
 }

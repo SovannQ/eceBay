@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js%22%3E"></script>
     <link rel="stylesheet" type="text/css" href="vendeur.css">
     <title>Document</title>
 </head>
@@ -93,91 +94,115 @@
                 </div>
 
 
-                <!-- e -->
-                <div class="col-md-4">
+                <!-- FORMULAIRE -->
+                <div class="col-md-12">
 
                     <h2 class="text-center">Ajouter un article</h2>
-                    <form action="admin_crud_vendeur.php" method="post">
+                    <form action="vendeur_crud.php" method="post" enctype="multipart/form-data">
+
                         <input type="hidden" name="id_article" value="<?= $id_article; ?>">
 
                         <input type="hidden" name="id_vendeur" value="<?= $id_vendeur; ?>">
+                        
     
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nom" name="nom_article"
-                                value="<?= $nom_article; ?>">
+                            <input type="file" class="custom-file"  name="photo">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="file" class="custom-file"  name="photo2">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nom de l'article" name="nom_article">
                         </div>
     
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Description" name="description" value="<?= $description; ?>">
+                            <input type="text" class="form-control" placeholder="Petite description" name="description1">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Grande description" name="description2">
                         </div>
     
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="categorie" name="categorie"
-                                value="<?= $categorie; ?>">
+                            >
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="prix" name="prix"
-                                value="<?= $prix; ?>">
+                            <input type="number" class="form-control" placeholder="prix" name="prix"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="type" name="type_vente">
                         </div>
     
                         <div class="form-group">
-                            <?php if($updated==true) { ?>
-                            <input type="submit" class="btn btn-info btn-block" value="Mettre à jour" name="updated">
-                            <?php } else { ?>
+                            
                             <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
                                 name="ajouter_article">
-                            <?php } ?>
                         </div>
     
                     </form>
     
                 </div>
 
-
+<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                 <!-- DB Vendeur -->
 
-            <div class="col-md-6">
-
+            <div class="col-md-12">
+                
+            
                 <?php
-                $query="SELECT * from article";
+                $id_vendeur = $_SESSION['idvendeur'];
+
+                $query="SELECT * from article WHERE id_vendeur='$id_vendeur'";
                 $statement=$connexion->prepare($query);
                 $statement->execute();
                 $result=$statement->get_result();
                 ?>
 
                 <h2 class="text-center">DB Article</h2>
-                <table class="table ">
+                
+                    <table class="table">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>ID Article</th>
                             <th>Photo</th>
-                            <th>ID_Vendeur</th>
-                            <th>Nom_Article</th>
-                            <th>Description</th>
+                            <th>ID Vendeur</th>
+                            <th>Nom Article</th>
+                            <th>Petite description</th>
+                            <th>Grande description</th>
                             <th>Catégorie</th>
                             <th>Prix</th>
+                            <th>Type</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while($row=$result->fetch_assoc()){ ?>
                         <tr>
 
-                            <td><?= $row['article'];?></td>
+                            <td><?= $row['id_article'];?></td>
+                            <td><img src=" <?= $row['photo']; ?>" width="25"></td>
+                            <td><?= $row['id_vendeur'];?></td>
                             <td><?= $row['nom_article'];?></td>
-                            <td><?= $row['mail'];?></td>
-                            <td><?= $row['mdp'];?></td>
+                            <td><?= $row['description1'];?></td>
+                            <td><?= $row['description2'];?></td>
+                            <td><?= $row['categorie'];?></td>
+                            <td><?= $row['prix'];?></td>
+                            <td><?= $row['type_vente'];?></td>
 
                             <td>
-                                <a href="admin_vendeur.php?edit=<?= $row['id_vendeur']; ?>"
-                                    class="badge badge-primary">modifier</a>
-                                <a href="admin_crud_vendeur.php?delete=<?=$row['id_vendeur']; ?>"
+                                <a href="..\back\admin_crud_article.php?delete=<?=$row['id_article']; ?>"
                                     class="badge badge-danger">Supprimer</a>
                             </td>
                         </tr>
                         <?php } ?>
                     </tbody>
-                </table>
+                
+                </div>
             </div>
 
 
