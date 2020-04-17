@@ -29,8 +29,8 @@
 <body>
 
     
-    <!-- Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+ <!-- Menu -->
+ <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active ml-5">
-              <a class="nav-link " href="../../index2.html">| Accueil |<span class="sr-only">(current)</span></a>
+              <a class="nav-link " href="../../accueil.php">| Accueil |<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mx-3">
               <a class="nav-link" href="../achats.php">| Achats |</a>
@@ -51,21 +51,10 @@
                 <a class="nav-link  mx-3" href="#">| Vente |</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  ml-1" href="../../panier.html">| Panier |</a>
+                <a class="nav-link  ml-1" href="../../panier.php">| Panier |</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  ml-1" href="../../back/admin_welcome.html">| Admin |</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
               </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">

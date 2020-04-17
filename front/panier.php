@@ -36,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active ml-5">
-                  <a class="nav-link " href="index2.html">| Accueil |<span class="sr-only">(current)</span></a>
+                  <a class="nav-link " href="accueil.php">| Accueil |<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item mx-3">
                   <a class="nav-link" href="achats/achats.php">| Achats |</a>
