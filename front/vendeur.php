@@ -1,4 +1,6 @@
-<?php include "connecter.php";
+<?php include "connecter.php"; 
+include "vendeur_crud.php";
+
 // continuer la session de connecter.php 
 ?>
 
@@ -104,13 +106,8 @@
 
                         <input type="hidden" name="id_vendeur" value="<?= $id_vendeur; ?>">
                         
-    
                         <div class="form-group">
-                            <input type="file" class="custom-file"  name="photo">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="file" class="custom-file"  name="photo2">
+                            <input type="file" name="photo" class="custom-file">
                         </div>
 
                         <div class="form-group">
@@ -170,7 +167,6 @@
                     <thead>
                         <tr>
                             <th>ID Article</th>
-                            <th>Photo</th>
                             <th>ID Vendeur</th>
                             <th>Nom Article</th>
                             <th>Petite description</th>
@@ -178,6 +174,7 @@
                             <th>Catégorie</th>
                             <th>Prix</th>
                             <th>Type</th>
+                            <th>Photo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -185,7 +182,6 @@
                         <tr>
 
                             <td><?= $row['id_article'];?></td>
-                            <td><img src=" <?= $row['photo']; ?>" width="25"></td>
                             <td><?= $row['id_vendeur'];?></td>
                             <td><?= $row['nom_article'];?></td>
                             <td><?= $row['description1'];?></td>
@@ -193,6 +189,7 @@
                             <td><?= $row['categorie'];?></td>
                             <td><?= $row['prix'];?></td>
                             <td><?= $row['type_vente'];?></td>
+                            <td><img src=" <?= $row['photo']; ?>" width="25"></td>
 
                             <td>
                                 <a href="..\back\admin_crud_article.php?delete=<?=$row['id_article']; ?>"

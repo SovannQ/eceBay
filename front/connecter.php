@@ -27,7 +27,7 @@
 
         if($check =="vendeur"){
 
-            $sql="SELECT mail,mdp FROM vendeur WHERE mail='mp@edu.ece.fr' AND mdp='123'";
+            $sql="SELECT mail,mdp FROM vendeur WHERE mail='$mail' AND mdp='$mdp'";
             
            
             $result = $connexion -> query($sql);
