@@ -42,22 +42,15 @@
                   <a class="nav-link" href="achats/achats.php">| Achats |</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="Inscription.html">| Catégories |</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link  mx-3" href="#">| Vente |</a>
+                    <a class="nav-link  mx-3" href="vendeur.php">| Vente |</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link  ml-1" href="../back/admin_welcome.html">| Admin |</a>
+                    <a class="nav-link  ml-1" href="admin_welcome.html">| Admin |</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link  ml-1" href="panier.php">| Panier |</a>
                   </li>
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-              </form>
           </nav>
 
           <?php 

@@ -1,5 +1,6 @@
 <?php
     include 'action.php';
+    include 'action2.php';
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +48,7 @@
                 <a class="nav-link  mx-3" href="#">| Vente |</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  ml-1" href="../panier.html">| Panier |</a>
+                <a class="nav-link  ml-1" href="../panier.php">| Panier |</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  ml-1" href="../back/admin_welcome.html">| Admin |</a>
@@ -110,8 +111,18 @@
                       <p class="card-text">Catégorie: <?= $vcategorie;?></p>
                     </li>
                   <p style="color:white">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                  <button type="button" class="btn btn-outline-success">Ajouter au panier</button>
-                  <a href="panier.html"><button type="button" class="btn btn-success">Voir panier</button></a>
+                  <?php  
+                     $_SESSION['id_panier']= '2';
+                     var_dump($_SESSION['id_panier']);
+                     $_SESSION['id_article']=$vid_article;
+                     var_dump($_SESSION['id_article']);
+                     $_SESSION['vprix']=$vprix;
+                     var_dump($_SESSION['vprix']);
+                  ?>
+                  <form action="action2.php" method="post">
+                  <input type="submit" class="btn btn-outline-success" name="ajouter_au_panier" value="Ajouter au panier">
+                  <a href="#"><button type="button" class="btn btn-success">Voir panier</button></a>
+                  </form>
                   </ul>
                 </div>
         </div>
