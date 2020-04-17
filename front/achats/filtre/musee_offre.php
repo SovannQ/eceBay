@@ -28,8 +28,7 @@
 
 <body>
 
-    
-    <!-- Menu -->
+        <!-- Menu -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +53,7 @@
                 <a class="nav-link  ml-1" href="../../panier.html">| Panier |</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  ml-1" href="../../../back/admin_welcome.html">| Admin |</a>
+                <a class="nav-link  ml-1" href="../../back/admin_welcome.html">| Admin |</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,12 +76,13 @@
 
       <header>
         <div>
-            <a href="panier.html"><img class="panier col-lg-1" src="panier.jpg"></a>
-            <a href="Inscription.html"><img class="panier col-lg-1" src="connexion.jpg"></a>
+            <a href="../panier.html"><img class="panier col-lg-1" src="../panier.jpg"></a>
+            <a href="../../Inscription.html"><img class="panier col-lg-1" src="../connexion.jpg"></a>
             <img class="lgo col-lg-1" src="lgo.jpg">
             <a href="../achats.php"><h1 class="titre">Toutes catégories</h1></a>
         </div>
     </header>
+
 
 <!-- MENU SUR LA GAUCHE -->
         <div class="menuleft col-sm-3">

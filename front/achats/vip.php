@@ -102,8 +102,6 @@
 
         
 <!-- TITRE -->
-      <div class="container">
-        <h3 class="h3 titre">Objets</h3>
         <div class="dropdown ">
             <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Type de vente

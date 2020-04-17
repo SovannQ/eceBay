@@ -42,7 +42,7 @@
               <a class="nav-link " href="../index2.html">| Accueil |<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achats.phps">| Achats |</a>
+              <a class="nav-link" href="achats.php">| Achats |</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="../Inscription.html">| Catégories |</a>
@@ -112,9 +112,7 @@
                 <a class="dropdown-item" href="#">Tout type de vente</a>
             </div>
         </div>
-<!-- TITRE -->
-      <div class="container">
-        <h3 class="h3 titre">Feraille</h3>
+        
 <!-- ARTICLES -->
                 <?php
                 $query="SELECT * from article";

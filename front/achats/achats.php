@@ -115,9 +115,6 @@
             </div>
         </div>
 <!-- TITRE -->
-    <div>
-        <h3 class="h3 titre">Toutes catégories</h3>
-    </div>
 
     <?php 
             $query="SELECT * from article";

@@ -112,9 +112,7 @@
                 <a class="dropdown-item" href="#">Tout type de vente</a>
             </div>
         </div>
-<!-- TITRE -->
-      <div class="container">
-        <h3 class="h3 titre">Bon pour le musee</h3>
+
 <!-- ARTICLES -->
                 <?php
                     $query="SELECT * from article";
