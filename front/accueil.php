@@ -51,7 +51,7 @@
                     <a class="nav-link  ml-1" href="../back/admin_welcome.html">| Admin |</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link  ml-1" href="panier.html">| Panier |</a>
+                    <a class="nav-link  ml-1" href="panier.php">| Panier |</a>
                   </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
