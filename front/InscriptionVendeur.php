@@ -1,8 +1,16 @@
+<?php
+
+    include 'inscrire.php'
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Akatsuki Inc.</title>
+    <title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,9 +25,8 @@
             $('.header').height($(window).height());
 
         });
-       
     </script>
-    
+
 </head>
 
 <body>
@@ -41,46 +48,53 @@
             </ul>
         </div>
     </nav>
-<br>
+    <br>
     <div class="text-center titre">
-    <h1>Formulaire inscription Vendeur de ECEbay</h1>
+        <h1>Formulaire inscription Vendeur de ECEbay</h1>
     </div>
     <br>
+
     
-        <table align=center><tr>
-            <div class= titre><p><br>Identification:</p></div>
+
+    <form action="inscrire.php" method="post" align=center>
+
+        <table align=center>
+            <tr>
+                <div class=titre>
+                    <p><br>Identification:</p>
+                </div>
+                <br>
+    
+                <td><input type="text" class="form-control" placeholder="Nom" name="nom"></td>
+    
+            </tr>
+        </table>
+
+        <div class="form-group ecriture">
             <br>
-                      
-                      <td><input type="text" class="form-control" placeholder="Nom" name="nom"></td>
-                      
-                      <td><input type="text" class="form-control" placeholder="Prenom" name="prenom"></td>
-                   </tr></table>
-                   
-                   <form align=center>
-                    <div class="form-group ecriture">
-                    <br>
-                      <label>Email address: </label>
-                      <input type="email" class="form-control taille" name="mail" placeholder="Enter email">
-                    </div>
-            
-                    <div class="form-group ecriture">
-                      <label> Mot de passe: </label>
-                      <input type="password" class="form-control taille" name="mdp" placeholder="Password">
-                      <small id="emailHelp" class="form-text text-muted">Ne jamais transmettre ses identifiants à un tiers</small>
-                    </div>
-                    <br>
+            <label>Email address: </label>
+            <input type="text" class="form-control taille" name="mail" placeholder="Enter email">
+        </div>
+
+        <div class="form-group ecriture">
+            <label> Mot de passe: </label>
+            <input type="password" class="form-control taille" name="mdp" placeholder="Password">
+            <small id="emailHelp" class="form-text text-muted">Ne jamais transmettre ses identifiants à un tiers</small>
+        </div>
+        <br>
         <input type="checkbox" id="condition" name="condition" value="condition">
-        <label for="condition"> <a href="https://www.youtube.com/watch?v=L_KikUmaAxg&list=RDMML_KikUmaAxg&start_radio=1">J'accepte les conditions utilisateur & contrat légal</a></label><br>
-        <button type="submit" class="button soumettre">Soumettre</button>
+        <label for="condition"> <a
+                href="https://www.youtube.com/watch?v=L_KikUmaAxg&list=RDMML_KikUmaAxg&start_radio=1">J'accepte les
+                conditions utilisateur & contrat légal</a></label><br>
+        <input type="submit" name="inscription" value="S'inscrire" id="inscription">
 
-    
 
-
-    <!--  <form action="TraitementInscription.php" method="post"> -->
+    </form>   <!--  <form action="TraitementInscription.php" method="post"> -->
 
 
 
 
 
 </body>
+
 </html>

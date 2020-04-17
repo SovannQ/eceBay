@@ -56,7 +56,7 @@
 
         <div class="row">
             <div class="col pt-4">
-                <a href="admin_welcome.html"><button type="button" class="btn btn-secondary  btn-lg " name="b1">Retour menu</button></a> 
+                <a href="..\front\admin_welcome.html"><button type="button" class="btn btn-secondary  btn-lg " name="b1">Retour menu</button></a> 
                 </div>
 
             <!-- Ajouter.modifier un vendeur dans la table vendeur-->
