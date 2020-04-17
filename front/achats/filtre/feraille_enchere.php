@@ -113,9 +113,7 @@
                 <a class="dropdown-item" href="../feraille.php">Tout type de vente</a>
             </div>
         </div>
-<!-- TITRE -->
-      <div class="container">
-        <h3 class="h3 titre">Bon pour le musee</h3>
+
 <!-- ARTICLES -->
                 <?php
                     $query="SELECT * from article WHERE type = 'enchere' ";
@@ -129,7 +127,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid3">
                     <div class="product-image3">
-                    <a href="article.php?article=<?= $row['id_article'];?>">
+                    <a href="../article.php?article=<?= $row['id_article'];?>">
                             <img class="pic-1 img-fluid" src="<?= $row['photo'];?>">
                             <img class="pic-2 img-fluid photo" src="<?= $row['photo2'];?>">
                         </a>

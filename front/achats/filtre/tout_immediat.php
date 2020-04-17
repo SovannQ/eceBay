@@ -39,22 +39,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active ml-5">
-              <a class="nav-link " href="../index2.html">| Accueil |<span class="sr-only">(current)</span></a>
+              <a class="nav-link " href="../../index2.html">| Accueil |<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="#">| Achats |</a>
+              <a class="nav-link" href="../achats.php">| Achats |</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="../Inscription.html">| Catégories |</a>
+              <a class="nav-link " href="../../Inscription.html">| Catégories |</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link  mx-3" href="#">| Vente |</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  ml-1" href="../panier.html">| Panier |</a>
+                <a class="nav-link  ml-1" href="../../panier.html">| Panier |</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  ml-1" href="../back/admin_welcome.html">| Admin |</a>
+                <a class="nav-link  ml-1" href="../../back/admin_welcome.html">| Admin |</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,14 +77,12 @@
 
       <header>
         <div>
-            <a href="panier.html"><img class="panier col-lg-1" src="panier.jpg"></a>
-            <a href="Inscription.html"><img class="panier col-lg-1" src="connexion.jpg"></a>
+            <a href="../panier.html"><img class="panier col-lg-1" src="../panier.jpg"></a>
+            <a href="../../Inscription.html"><img class="panier col-lg-1" src="../connexion.jpg"></a>
             <img class="lgo col-lg-1" src="lgo.jpg">
-            <a href="#"><h1 class="titre">Toutes catégories</h1></a>
+            <a href="../achats.php"><h1 class="titre">Toutes catégories</h1></a>
         </div>
     </header>
-
-
     
 
 <!-- MENU SUR LA GAUCHE -->
@@ -133,7 +131,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid3">
                     <div class="product-image3">
-                        <a href="article.php?article=<?= $row['id_article'];?>">
+                        <a href="../article.php?article=<?= $row['id_article'];?>">
                             <img class="pic-1 img-fluid" src="<?= $row['photo'];?>">
                             <img class="pic-2 img-fluid photo" src="<?= $row['photo2'];?>">
                         </a>

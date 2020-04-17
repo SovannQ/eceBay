@@ -102,9 +102,7 @@
         </div>
 
         
-<!-- TITRE -->
-      <div class="container">
-        <h3 class="h3 titre">Objets</h3>
+
         <div class="dropdown ">
             <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Type de vente
@@ -130,7 +128,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid3">
                     <div class="product-image3">
-                    <a href="article.php?article=<?= $row['id_article'];?>">
+                    <a href="../article.php?article=<?= $row['id_article'];?>">
                             <img class="pic-1 img-fluid" src="<?= $row['photo'];?>">
                             <img class="pic-2 img-fluid photo" src="<?= $row['photo2'];?>">
                         </a>

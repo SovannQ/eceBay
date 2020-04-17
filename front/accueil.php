@@ -1,3 +1,7 @@
+<?php
+    include 'achats/action.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -56,46 +60,55 @@
               </form>
           </nav>
 
-            <div>
-                <!-- Titre et description -->
-                <div class="col-sm-4 gauche">
-                    <h1>Bienvenue sur ECEbay, le premier site d'e-commerce d'antiquités !</h1>
-                </div>
-                <!-- Carousel -->
-                <div id="carouselExampleControls" class="carousel slide col-sm-4 main" data-ride="carousel" data-interval="4000">
-                    <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href="achats/article.html"><img class=" w-100" src="images caroussel/pnl.jpg"  alt="First slide" ></a>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Deux frères</h5>
-                            <p>Album sorti en 2019</p>
+          <?php 
+            $query="SELECT * from article";
+            $statement=$connexion->prepare($query);
+            $statement->execute();
+            $result=$statement->get_result();
+            $row=$result->fetch_assoc();
+            $row2=$result->fetch_assoc();
+            $row3=$result->fetch_assoc();
+            ?>
+                <div>
+                    <!-- Titre et description -->
+                    <div class="col-sm-4 gauche">
+                        <h1>Bienvenue sur ECEbay, le premier site d'e-commerce d'antiquités !</h1>
+                    </div>
+                    <!-- Carousel -->
+                    <div id="carouselExampleControls" class="carousel slide col-sm-4 main" data-ride="carousel" data-interval="4000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="achats/article.php?article=<?= $row['id_article'];?>"><img class=" w-100" src="<?=$row['photo'];?>"  alt="First slide" ></a>
+                                <div class=" d-none d-md-block">
+                                    <h5><?= $row['nom_article'];?></h5>
+                                    <p><?= $row['prix'];?> euros</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                            <a href="achats/article.php?article=<?= $row2['id_article'];?>"><img class="w-100" src="<?=$row2['photo'];?>" alt="Second slide"></a>
+                                <div class=" d-none d-md-block">
+                                    <h5><?= $row2['nom_article'];?></h5>
+                                    <p><?= $row2['prix'];?> euros</</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="achats/article.php?article=<?= $row3['id_article'];?>"><img class=" w-100" src="<?=$row3['photo'];?>" alt="Third slide"></a>
+                                <div class=" d-none d-md-block">
+                                    <h5><?= $row3['nom_article'];?></h5>
+                                    <p><?= $row3['prix'];?> euros</</p>
+                                </div>
+                            </div>
                         </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <div class="carousel-item">
-                        <a href="achats/article.html"><img class="w-100" src="images caroussel/pnl2.jpg" alt="Second slide"></a>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Dans la légende</h5>
-                            <p>Album sorti en 2016</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="achats/article.html"><img href="article.html"><img class=" w-100" src="images caroussel/pnl3.jpg" alt="Third slide"></a>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Le monde chico</h5>
-                            <p>Album sorti en 2015</p>
-                        </div>
-                    </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
+                </div>          
             <h2 class="titrecar">Actuellement à vendre</h2>
 
     <!-- pied de page -->
