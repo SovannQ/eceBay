@@ -23,14 +23,15 @@
 
         $nom_article=$_POST['nom_article'];
         $description1=$_POST['description1'];
+        $description2=$_POST['description2'];
         $categorie=$_POST['categorie'];
 
         $photo=$_FILES['photo']['name'];
         $upload="photo_article/".$photo;
 
-        $query="INSERT INTO article(nom_article,description1,categorie,photo)VALUES(?,?,?,?)";
+        $query="INSERT INTO article(nom_article,description1,description2,categorie,photo)VALUES(?,?,?,?,?)";
         $statement=$connexion->prepare($query);
-        $statement->bind_param("ssss",$nom_article,$description1,$categorie,$upload);
+        $statement->bind_param("sssss",$nom_article,$description1,$description2,$categorie,$upload);
         $result = $statement->execute();
         
         move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
@@ -39,10 +40,9 @@
 
         //empêche la redirection vers un onglet vide après le traitement php
         if ($result)
-        {
-         var_dump($upload);   
+        {   
         // Successful popup message, redirected back to view contacts
-        //echo "<script type='text/javascript'>alert('Successful - article ajouté!'); window.location.href = 'admin_crud_article.php';</script>";
+        echo "<script type='text/javascript'>alert('Successful - article ajouté!'); window.location.href = 'admin_crud_article.php';</script>";
         }
         else
         {
