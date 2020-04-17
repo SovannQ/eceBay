@@ -24,6 +24,9 @@
     .ecriture {
         color: #85c8e2; 
         text-align: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
     }
     .soumettre {
         background-color: white;
@@ -40,8 +43,8 @@
       
         }
 
-        .taille {
-            width: 300px;
+        textarea{
+            display: block;
             margin-left: auto;
             margin-right: auto;
         }
@@ -57,4 +60,3 @@
         }
        
 
-    
