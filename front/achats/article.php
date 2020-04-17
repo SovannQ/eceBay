@@ -1,3 +1,7 @@
+<?php
+    include 'action.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,14 +17,13 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $('.header').height($(window).height());
-    
             });
         </script>
     
     </head>
 
 
-<body class="fond">
+<body style="background-color: grey">
 
     <!-- Menu -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
@@ -35,7 +38,7 @@
               <a class="nav-link " href="../index2.html">| Accueil |<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achats.html">| Achats |</a>
+              <a class="nav-link" href="achats.php">| Achats |</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="../Inscription.html">| Catégories |</a>
@@ -76,23 +79,17 @@
       <div class="col-lg-3">
         <h1 class="my-4">ECEbay</h1>
       </div>
-        <div class="card mt-4">
+      <div class="card mt-4 l">
+        <div class="row">
             <!-- Carousel -->
                 <div id="carouselExampleControls" class="carousel slide col-sm-4" data-ride="carousel" data-interval="4000">
                     <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class=" w-100" src="images caroussel/pnl.jpg"  alt="First slide" >
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Férailles ou trésor</h5>
-                            <p>ID</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="w-100" src="images caroussel/pnl2.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class=" w-100" src="images caroussel/pnl3.jpg" alt="Third slide">
-                    </div>
+                      <div class="carousel-item active">
+                          <img class=" w-100" src="<?= $vphoto;?>"  alt="First slide" >
+                      </div>
+                      <div class="carousel-item">
+                          <img class="w-100" src="<?= $vphoto2;?>" alt="Second slide">
+                      </div>
                     </div>
                     <a class="carousel-control-prev yo" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -103,33 +100,36 @@
                     <span class="sr-only">Next</span>
                     </a>
                 </div>
-          <div class="card-body oy">
-            <h3 class="card-title hey">Product Name</h3>
-            <h4>$24.99</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-            <button type="button" class="btn btn-outline-success">Ajouter au panier</button>
-            <a href="panier.html"><button type="button" class="btn btn-success">Voir panier</button></a>
-          </div>
+                <div class="card-body oy col-sm-4">
+                  <ul>
+                  <li>
+                      <h4>Nom: <?= $vnom_article;?></h4>
+                    </li>
+                    <li>
+                      <h4>Prix: <?= $vprix;?> euros</h4>
+                    </li>
+                    <li>
+                      <h5>Numéro de l'article: <?= $vid_article;?></h5>
+                    </li>
+                    <li>
+                      <h5>Type de vente: <?= $vtype;?></h5>
+                    </li>
+                    <li>
+                      <h6 class="card-text">Description: <?= $vdescription;?></h6>
+                    </li>
+                    <li>
+                      <p class="card-text">Catégorie: <?= $vcategorie;?></p>
+                    </li>
+                  <p style="color:white">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                  <button type="button" class="btn btn-outline-success">Ajouter au panier</button>
+                  <a href="panier.html"><button type="button" class="btn btn-success">Voir panier</button></a>
+                  </ul>
+                </div>
         </div>
-        <!-- /.card -->
+      </div>
+          <!-- /.card -->
 
-        <div class="card card-outline-secondary my-4">
-          <div class="card-header">
-            Product Reviews
-          </div>
-          <div class="card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-          </div>
-        </div>
-        <!-- /.card -->
+        
 
       </div>
       <!-- /.col-lg-9 -->

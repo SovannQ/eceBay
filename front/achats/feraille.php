@@ -42,7 +42,7 @@
               <a class="nav-link " href="../index2.html">| Accueil |<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="#">| Achats |</a>
+              <a class="nav-link" href="achats.phps">| Achats |</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="../Inscription.html">| Catégories |</a>
@@ -80,18 +80,14 @@
             <a href="panier.html"><img class="panier col-lg-1" src="panier.jpg"></a>
             <a href="Inscription.html"><img class="panier col-lg-1" src="connexion.jpg"></a>
             <img class="lgo col-lg-1" src="lgo.jpg">
-            <a href="#"><h1 class="titre">Toutes catégories</h1></a>
+            <a href="achats.php"><h1 class="titre">Toutes catégories</h1></a>
         </div>
     </header>
-
-
-    
 
 <!-- MENU SUR LA GAUCHE -->
         <div class="menuleft col-sm-3">
             <ul class="nav flex-column">
             <hr color="black">
-            <hr color="black">  
             <li class="nav-item selectionne">
                 <hr color="black"> <a class="nav-link" href="feraille.php">Féraille ou Trésor</a><hr color="black">
             </li>
@@ -109,29 +105,30 @@
                 Type de vente
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="filtre/tout_enchere.php">Enchères</a>
-                <a class="dropdown-item" href="filtre/tout_offre.php">Plus offrand</a>
-                <a class="dropdown-item" href="filtre/tout_immediat.php">Achat immédiat</a>
+                <a class="dropdown-item" href="filtre/feraille_enchere.php">Enchères</a>
+                <a class="dropdown-item" href="filtre/feraille_offre.php">Plus offrand</a>
+                <a class="dropdown-item" href="filtre/feraille_immediat.php">Achat immédiat</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Tout type de vente</a>
             </div>
         </div>
 <!-- TITRE -->
-    <div>
-        <h3 class="h3 titre">Toutes catégories</h3>
-    </div>
-
-    <?php 
-            $query="SELECT * from article";
-            $statement=$connexion->prepare($query);
-            $statement->execute();
-            $result=$statement->get_result();
-    ?>
+      <div class="container">
+        <h3 class="h3 titre">Feraille</h3>
 <!-- ARTICLES -->
+                <?php
+                $query="SELECT * from article";
+                $statement=$connexion->prepare($query);
+                $statement->execute();
+                $result=$statement->get_result();
+                ?>
         <div class="row bordure">
             <?php while($row=$result->fetch_assoc()){ ?>
+                <?php if($row['categorie'] == "feraille"){ ?>
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid3">
                     <div class="product-image3">
-                        <a href="article.php?article=<?= $row['id_article'];?>">
+                    <a href="article.php?article=<?= $row['id_article'];?>">
                             <img class="pic-1 img-fluid" src="<?= $row['photo'];?>">
                             <img class="pic-2 img-fluid photo" src="<?= $row['photo2'];?>">
                         </a>
@@ -149,11 +146,10 @@
                 </div>
             </div>
             <?php } ?>
+            <?php } ?>
         </div>
     </div>
     <hr>
-    
-                
 
     <!-- pied de page -->
     <footer class="page-footer">

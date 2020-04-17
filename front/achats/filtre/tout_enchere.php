@@ -1,5 +1,5 @@
 <?php
-    include 'action.php';
+    include '../action.php';
 ?>
 
 
@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="achats.css">
+    <link rel="stylesheet" type="text/css" href="../achats.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -93,13 +93,13 @@
             <hr color="black">
             <hr color="black">  
             <li class="nav-item selectionne">
-                <hr color="black"> <a class="nav-link" href="feraille.php">Féraille ou Trésor</a><hr color="black">
+                <hr color="black"> <a class="nav-link" href="feraille_enchere.php">Féraille ou Trésor</a><hr color="black">
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="musee.php">Bon pour le musée</a><hr color="black">
+                <a class="nav-link" href="musee_enchere.php">Bon pour le musée</a><hr color="black">
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="vip.php">Accessoire VIP</a><hr color="black">
+                <a class="nav-link" href="vip_enchere.php">Accessoire VIP</a><hr color="black">
             </li>
             </ul>
         </div>
@@ -109,9 +109,11 @@
                 Type de vente
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="filtre/tout_enchere.php">Enchères</a>
-                <a class="dropdown-item" href="filtre/tout_offre.php">Plus offrand</a>
-                <a class="dropdown-item" href="filtre/tout_immediat.php">Achat immédiat</a>
+                <a class="dropdown-item" href="tout_enchere.php">Enchères</a>
+                <a class="dropdown-item" href="tout_offre.php">Plus offrand</a>
+                <a class="dropdown-item" href="tout_immediat">Achat immédiat</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../achats.php">Tout type de vente</a>
             </div>
         </div>
 <!-- TITRE -->
@@ -120,7 +122,7 @@
     </div>
 
     <?php 
-            $query="SELECT * from article";
+            $query="SELECT * from article WHERE type='enchere' ";
             $statement=$connexion->prepare($query);
             $statement->execute();
             $result=$statement->get_result();

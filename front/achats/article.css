@@ -14,10 +14,12 @@
     margin-top: 5%;
 	margin-bottom: 1%;
 }
-.fond{
-	background-image:url(imagefond.jpg);
-	background-size: 100%;
+
+
+.blanc{
+    color: white;
 }
+
 .page-footer {
     background-color: #000;
     color: #ccc;
@@ -32,8 +34,13 @@
        padding-top: 20%;
    }
 
+.l{
+    margin-bottom:5%;
+}
+
    .oy{
        padding-top: 10%;
+       margin-bottom:10%;
    }
 
    .hey{
