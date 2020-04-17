@@ -66,6 +66,7 @@
 
     }
 
+    ////////////////////////////////////////////////////////// A UTIULISER POUR LE TABLEAU DE ARTICLES 
     if(isset($_GET['edit'])){
 
         $id_vendeur=$_GET['edit'];

@@ -7,8 +7,6 @@ body {
 	background-repeat: no-repeat;
 	  background-attachment: fixed;
 	  background-size: 1500px;
-
-	
 }
 
 .fond{
@@ -38,9 +36,10 @@ body {
 }
 
 
+
 .carousel{
 	width: 25%;
-	margin-left: auto;
+	margin-left: 55%;
 	margin-right: auto;
 	margin-top: 11%;
 	padding-top: 2%;
@@ -59,7 +58,7 @@ h1{
 }
 
 .titrecar{
-	text-align: center;
+	margin-left: 57%;
 	text-decoration: overline;
 	margin-bottom: 15%;
 	color: black;

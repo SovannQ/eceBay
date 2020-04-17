@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="admin_styles.css">
+    <title>Accueil Admin</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+        <a class="navbar-brand" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active ml-5">
+              <a class="nav-link " href="../front/accueil.php">| Accueil |<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="../front/achats/achats.php">| Achats |</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  mx-3" href="#">| Vente |</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  ml-1" href="../front/panier.php">| Panier |</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  ml-1" href="admin_welcome.html">| Admin |</a>
+              </li>
+          </ul>
+      </nav>
+
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Menu admin</h1>
+            <p>Ici, vous pouvez gérer les vendeurs, acheteurs, articles...</p>
+        </div>
+            <div class="row">
+                <div class="col text-center">
+                <a href="..\back\admin_vendeur.php"><button type="button" class="btn btn-success  btn-lg " name="b1">Gérer vendeurs</button></a> 
+                </div>
+                <div class="col text-center">
+                <a href="..\back\admin_acheteur.php"><button type="button" class="btn btn-warning  btn-lg">Gérer acheteurs</button></a> 
+                </div>
+                <div class="col text-center">
+                <a href="..\back\admin_article.php"><button type="button" class="btn btn-primary btn-lg" name="b2">Gérer articles</button></a>
+            </div>  
+            </div>
+    </div>
+    
+</body>
+</html>
