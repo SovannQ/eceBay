@@ -1,3 +1,7 @@
+<?php include "connecter.php";
+// continuer la session de connecter.php 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +56,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                        <img src="https://i.pinimg.com/236x/ac/43/bd/ac43bdba24f33ff52ac6ee5c6ac22424--fails-religion.jpg"
                             alt="" />
                         <div class="file btn btn-lg btn-primary">
                             Changer la photo
@@ -62,12 +66,15 @@
                 </div>
                 <div class="col-md-6">
                     <div class="profile-head">
+                        <h4>
+                            Bienvenue, <?= $_SESSION['mail'] ?>
+
+                        </h4>
+                        <a href="logout.php">Se déconnecter</a>
                         <h5>
-                            Nom
+                            <!-- VOIR connecter.php  -->
+                           Id vendeur : <?= $_SESSION['idvendeur']  ?> 
                         </h5>
-                        <h6>
-                            Mail
-                        </h6>
                         <p class="proile-rating">RANKINGS : <span>8/10</span></p>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">

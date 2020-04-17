@@ -1,3 +1,8 @@
+<?php
+
+    include 'inscrire.php'
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,9 +22,8 @@
             $('.header').height($(window).height());
 
         });
-        
     </script>
-    
+
 </head>
 
 <body>
@@ -41,59 +45,79 @@
             </ul>
         </div>
     </nav>
-<br>
+    <br>
     <div class="text-center titre">
-    <h1>Formulaire d'inscription Acheteur</h1>
+        <h1>Formulaire d'inscription Acheteur</h1>
     </div>
     <br>
 
-        <table align=center><tr>
-            <div class= titre><p><br>Identification:</p></div>
-                      
-                      <td><input type="text" class="form-control" placeholder="Nom" name="nom"></td>
-                      
-                      <td><input type="text" class="form-control" placeholder="Prenom" name="prenom"></td>
-                   </tr></table>
-                   
-                   <form align=center>
-                    <div class="form-group ecriture">
-                    <br>
-                      <label>Email address: </label>
-                      <input type="email" class="form-control taille" name="mail" placeholder="Enter email">
-                    </div>
-            
-                    <div class="form-group ecriture">
-                      <label> Mot de passe: </label>
-                      <input type="password" class="form-control taille" name="mdp" placeholder="Password">
-                      <small id="emailHelp" class="form-text text-muted">Ne jamais transmettre ses identifiants à un tiers</small>
-                    </div>
-                    
-           <table align=center><br><tr>
-            <div class= titre><p><br>Domicile:</p></div>
-            <td><input type="text" class="form-control" placeholder="Rue" name="rue"></td>
-            <td><input type="text" class="form-control" placeholder="Ville" name="ville"></td></tr><tr>
-            <td><input type="number" class="form-control" placeholder="Code" name="codepostal"></td>
-             <td><input type="text" class="form-control" placeholder="Pays" name="pays"></td></tr>
-        </table>
-        <br>
-        <table align=center><br><tr>
-            <div class= titre><p><br>Information bancaire:</p></div></tr><tr>
-            <input type="radio"  name="classe" value="visa">Visa 
-            <input type="radio"  name="classe" value="mastercard">MasterCard
-            <input type="radio"  name="classe" value="americanexpress"> American Express</tr>
-            <br>
-            <td><input type="number" class="form-control" placeholder="N°de carte bancaire" name="numerocb"></td>
-            <td><input type="text" class="form-control" placeholder="Nom du propriétaire" name="ville"></td></tr><tr>
-            <td><input type="date" class="form-control" placeholder="Date expiration" name="dateexpiration"></td>
-             <td><input type="number" class="form-control" placeholder="CCV" name="ccv"></td></tr>
-        </table>
-        <br>
-        <input type="checkbox" id="condition" name="condition" value="condition">
-        <label for="condition"> <a href="https://www.youtube.com/watch?v=L_KikUmaAxg&list=RDMML_KikUmaAxg&start_radio=1">J'accepte les conditions utilisateur & contrat légal</a></label><br>
-        <button type="submit" class="button soumettre">Soumettre</button>
     
 
 
+    <!-- FORM ACHETEUR -->
+    <form action="inscrire.php" method="post" align=center>
+        <div class="form-group ecriture">
+            <div class=titre>
+                <p><br>Identification:</p>
+            </div>
+            <br>
+            <label>Nom: </label>
+            <input type="text" class="form-control taille" name="nom" placeholder="Nom">
+        </div>
+        <div class="form-group ecriture">
+            <label>Email address: </label>
+            <input type="text" class="form-control taille" name="mail" placeholder="Enter email">
+        </div>
+
+        <div class="form-group ecriture">
+            <label> Mot de passe: </label>
+            <input type="password" class="form-control taille" name="mdp" placeholder="Password">
+            <small id="emailHelp" class="form-text text-muted">Ne jamais transmettre ses identifiants à un tiers</small>
+        </div>
+
+        <table align=center><br>
+            <tr>
+                <div class=titre>
+                    <p>Domicile:</p>
+                </div>
+                <td><input type="text" class="form-control" placeholder="Nom" name="nom_livraison"></td>
+                <td><input type="text" class="form-control" placeholder="Rue" name="rue"></td>
+                <td><input type="text" class="form-control" placeholder="Ville" name="ville"></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" placeholder="Code Postal" name="code_postal"></td>
+                <td><input type="text" class="form-control" placeholder="Pays" name="pays"></td>
+            </tr>
+        </table>
+        <br>
+        <table align=center><br>
+            <tr>
+                <div class=titre>
+                    <p>Information bancaire:</p>
+                </div>
+            </tr>
+            <tr>
+                <input type="radio" name="card" value="visa">Visa
+                <input type="radio" name="card" value="mastercard">MasterCard
+                <input type="radio" name="card" value="americanexpress"> American Express</tr>
+            <br>
+            <td><input type="number" class="form-control" placeholder="N°de carte bancaire" name="numerocb"></td>
+            <td><input type="text" class="form-control" placeholder="Nom du propriétaire" name="nom_carte"></td>
+            </tr>
+            <tr>
+                <td><input type="date" class="form-control" placeholder="Date expiration" name="date"></td>
+                <td><input type="text" class="form-control" placeholder="CVV" name="cvv"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="checkbox" id="condition" name="condition" value="condition">
+        <label for="condition"> <a
+                href="https://www.youtube.com/watch?v=L_KikUmaAxg&list=RDMML_KikUmaAxg&start_radio=1">J'accepte les
+                conditions utilisateur & contrat légal</a></label><br>
+        <input type="submit" name="inscription_acheteur" value="S'inscrire" id="inscription">
+
+
+    </form>
     <!--  <form action="TraitementInscription.php" method="post"> -->
 
 
@@ -101,4 +125,5 @@
 
 
 </body>
+
 </html>
