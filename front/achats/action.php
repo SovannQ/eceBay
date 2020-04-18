@@ -26,7 +26,7 @@
         $vphoto2=$row['photo2'];
         $vid_vendeur=$row['id_vendeur'];
         $vnom_article=$row['nom_article'];
-        $vdescription=$row['description'];
+        $vdescription=$row['description1'];
         $vcategorie=$row['categorie'];
         $vprix=$row['prix'];
         $vtype=$row['type'];

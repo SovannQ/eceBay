@@ -121,7 +121,7 @@
                     </div>
                     <div class="product-content">
                         <h3 class="title"><a href="#"><?= $row['nom_article'];?>  |  <?= $row['type'];?>  |  <?= $row['categorie'];?></a></h3>
-                        <p><?= $row['description'];?></p>
+                        <p><?= $row['description1'];?></p>
                         <div class="price">
                         <?= $row['prix'];?> euros
                         </div>

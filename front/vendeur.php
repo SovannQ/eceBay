@@ -13,12 +13,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="admin_styles.css">
     <link rel="stylesheet" type="text/css" href="vendeur.css">
-<<<<<<< HEAD
-     <title>Document</title>
-=======
 
     <title>VENDEUR</title>
->>>>>>> 88657828ecadbc81d794d943475f10dd6f7fd49f
 </head>
 
 <body>
@@ -68,7 +64,6 @@
     </nav>
 
 
-<<<<<<< HEAD
     <div class="container-fluid emp-profile">
         <form method="post">
             <div class="row">
@@ -111,7 +106,6 @@
                 </div>
                 <div class="col-md-2">
                     <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
-=======
     <!-- acheteur-->
     <div class="container-fluid">
 
@@ -145,7 +139,6 @@
 
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo">
->>>>>>> 88657828ecadbc81d794d943475f10dd6f7fd49f
                 </div>
 
                 <div class="form-group ">

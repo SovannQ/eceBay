@@ -57,16 +57,13 @@ ul{
 
 h1{
 	font-size: 400%;
-<<<<<<< HEAD
-	color: black;
+	
 	font-family: 'Open Sans', sans-serif;
 
 	
 	
-=======
 	color: rgb(255, 255, 255);
 	font-weight: bold;
->>>>>>> 88657828ecadbc81d794d943475f10dd6f7fd49f
 }
 
 .gauche{
@@ -79,7 +76,7 @@ h1{
 	margin-left: 57%;
 	text-decoration: overline;
 	margin-bottom: 15%;
-	color: black;
+	color: rgb(255, 255, 255);;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -93,6 +90,8 @@ h1{
 
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
+	color: rgb(255, 255, 255);
+
 
 }
 
@@ -193,14 +192,9 @@ color: #ffffff;
 }
 
 .page-footer {
-<<<<<<< HEAD
  background-color:whitesmoke;
  color:black;
  font-family: 'Open Sans', sans-serif;
-=======
- background-color: #000;
- color: rgb(206, 25, 25);
->>>>>>> 88657828ecadbc81d794d943475f10dd6f7fd49f
  padding: 60px 0 30px;
  font-size: 15px;
 }
