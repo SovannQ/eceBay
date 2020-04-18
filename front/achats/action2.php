@@ -8,7 +8,6 @@
         die("Erreur de connexion.".$connexion->connect_error);
     }
     ////////////////////////////////////////////////////////  
-
     
     if(isset($_POST['ajouter_au_panier'])){
 

@@ -1,3 +1,8 @@
+<?php
+    include 'achats/action.php';
+    include 'achats/action2.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -78,29 +83,22 @@
                                     <th> </th>
                                 </tr>
                             </thead>
+                            <?php 
+                                $query="SELECT * from article WHERE article.id_article IN(SELECT panier.id_article FROM panier)";
+                                $statement=$connexion->prepare($query);
+                                $statement->execute();
+                                $result=$statement->get_result();
+                            ?>
                             <tbody>
-                                <tr>
-                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                    <td>Product Name Dada</td>
-                                    <td>In stock</td>
-                                    <td class="text-right">124,90 €</td>
-                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                    <td>Product Name Toto</td>
-                                    <td>In stock</td>
-                                    <td class="text-right">33,90 €</td>
-                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                    <td>Product Name Titi</td>
-                                    <td>In stock</td>
-                                    <td class="text-right">70,00 €</td>
-                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                                </tr>
-
+                                <?php while($row=$result->fetch_assoc()){ ?>
+                                    <tr>
+                                        <td><img src="<?= $row['photo'];?>" /> </td>
+                                        <td><?= $row['nom_article'];?></td>
+                                        <td><?= $row['id_article'];?></td>
+                                        <td class="text-right"><?= $row['prix'];?></td>
+                                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
