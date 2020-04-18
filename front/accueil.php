@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="styles2.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script type="text/javascript">
         $(document).ready(function () {
             $('.header').height($(window).height());
@@ -27,7 +27,7 @@
 <body class="fond" > 
 
         <!-- Menu -->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">Menu</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -102,7 +102,7 @@
                         </a>
                     </div>
                 </div>          
-            <h2 class="titrecar">Actuellement à vendre</h2>
+            <h3 class="titrecar">Actuellement à vendre</h3>
 
     <!-- pied de page -->
     <footer class="page-footer">
