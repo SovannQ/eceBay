@@ -35,9 +35,6 @@
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active ml-5">
-                  <a class="nav-link " href="#">| Accueil |<span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item mx-3">
                   <a class="nav-link" href="Inscription.php">| Achats |</a>
                 </li>
@@ -71,21 +68,21 @@
                     <div id="carouselExampleControls" class="carousel slide col-sm-4 main" data-ride="carousel" data-interval="4000">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <a href="achats/article.php?article=<?= $row['id_article'];?>"><img class=" w-100" src="<?=$row['photo'];?>"  alt="First slide" ></a>
+                                <a href="Inscription.php"><img class=" w-100" src="photos/<?=$row['photo'];?>"  alt="First slide" ></a>
                                 <div class=" d-none d-md-block">
                                     <h5><?= $row['nom_article'];?></h5>
                                     <p><?= $row['prix'];?> euros</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                            <a href="achats/article.php?article=<?= $row2['id_article'];?>"><img class="w-100" src="<?=$row2['photo'];?>" alt="Second slide"></a>
+                            <a href="Inscription.php"><img class="w-100" src="photos/<?=$row2['photo'];?>" alt="Second slide"></a>
                                 <div class=" d-none d-md-block">
                                     <h5><?= $row2['nom_article'];?></h5>
                                     <p><?= $row2['prix'];?> euros</</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <a href="achats/article.php?article=<?= $row3['id_article'];?>"><img class=" w-100" src="<?=$row3['photo'];?>" alt="Third slide"></a>
+                                <a href="Inscription.php"><img class=" w-100" src="photos/<?=$row3['photo'];?>" alt="Third slide"></a>
                                 <div class=" d-none d-md-block">
                                     <h5><?= $row3['nom_article'];?></h5>
                                     <p><?= $row3['prix'];?> euros</</p>

@@ -35,22 +35,21 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active ml-5">
-              <a class="nav-link " href="../index2.html">| Accueil |<span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item mx-3">
               <a class="nav-link" href="achats.php">| Achats |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  mx-3" href="../vendeur.php">| Vente |</a>
+                <a class="nav-link  mx-3" href="Inscription.php">| Vente |</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  ml-1" href="../panier.php">| Panier |</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  ml-1" href="../back/admin_welcome.html">| Admin |</a>
+                <a class="nav-link  ml-1" href="Inscription.php">| Admin |</a>
               </li>
           </ul>
+          <a href="../Inscription.php"><button type="button" class="btn btn-danger ml_5">Deconnexion</button></a>
+
         </div>
       </nav>
 
@@ -68,10 +67,10 @@
                 <div id="carouselExampleControls" class="carousel slide col-sm-4" data-ride="carousel" data-interval="4000">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                          <img class=" w-100" src="<?= $vphoto;?>"  alt="First slide" >
+                          <img class=" w-100" src="../photos/<?= $vphoto;?>"  alt="First slide" >
                       </div>
                       <div class="carousel-item">
-                          <img class="w-100" src="<?= $vphoto2;?>" alt="Second slide">
+                          <img class="w-100" src="../photos/<?= $vphoto2;?>" alt="Second slide">
                       </div>
                     </div>
                     <a class="carousel-control-prev yo" href="#carouselExampleControls" role="button" data-slide="prev">

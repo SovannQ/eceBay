@@ -15,7 +15,9 @@ body {
 	background-size: 100%;
 }
 
-
+.droite{
+	margin-left: auto;
+}
 
 /*--- navigation bar ---*/
 

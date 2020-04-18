@@ -32,7 +32,7 @@
 
     
     <!-- Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -40,29 +40,26 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active ml-5">
-              <a class="nav-link " href="../accueil.php">| Accueil |<span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item mx-3">
               <a class="nav-link" href="achats.php">| Achats |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  mx-1" href="../vendeur.php">| Vente |</a>
+                <a class="nav-link  mx-3" href="../Inscription.php">| Vente |</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  ml-1" href="../panier.php">| Panier |</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  ml-1" href="../admin_welcome.html">| Admin |</a>
+                <a class="nav-link  ml-1" href="../Inscription.php">| Admin |</a>
               </li>
           </ul>
+          <a href="../Inscription.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
         </div>
       </nav>
 
       <header>
         <div>
             <a href="../panier.php"><img class="panier col-lg-1" src="panier.jpg"></a>
-            <a href="Inscription.html"><img class="panier col-lg-1" src="connexion.jpg"></a>
             <img class="lgo col-lg-1" src="lgo.jpg">
             <a href="#"><h1>Toutes catégories</h1></a>
         </div>
@@ -112,16 +109,13 @@
                 <div class="product-grid3">
                     <div class="product-image3">
                         <a href="article.php?article=<?= $row['id_article'];?>">
-                            <img class="pic-1 img-fluid" src="<?= $row['photo'];?>">
-                            <img class="pic-2 img-fluid photo" src="<?= $row['photo2'];?>">
+                            <img class="pic-1 img-fluid" src="../photos/<?= $row['photo'];?>">
+                            <img class="pic-2 img-fluid photo" src="../photos/<?= $row['photo2'];?>">
                         </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
                     </div>
                     <div class="product-content">
                         <h3 class="title"><a href="#"><?= $row['nom_article'];?>  |  <?= $row['typevente'];?>  |  <?= $row['categorie'];?></a></h3>
-                        <p><?= $row['description1'];?></p>
+                        <p><?= $row['description2'];?></p>
                         <div class="price">
                         <?= $row['prix'];?> euros
                         </div>

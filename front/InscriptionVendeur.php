@@ -30,24 +30,31 @@
 </head>
 
 <body>
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="Inscription.php">| Achats |</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link  mx-3" href="Inscription.php">| Vente |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  ml-1" href="#">| Admin |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  ml-1" href="Inscription.php">| Panier |</a>
+        </li>
+    </ul>
+    <a href="../Inscription.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
 
-    <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="#"><img src="images caroussel/pnl.jpg" alt="Logo" style="width: 40px"></a>
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-            <span class="navbar-toggler-icon"><img src="akatsuki.png" alt="Logo" style="width: 40px"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="main-navigation">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">Categorie</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Achat</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Vente</a></li>
-                <li class="nav-item"><a class="nav-link" href="Inscription.html">Votre compte</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Panier</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Admin</a></li>
-            </ul>
-        </div>
-    </nav>
+</nav>
     <br>
     <div class="text-center titre">
         <h1>Formulaire inscription Vendeur de ECEbay</h1>

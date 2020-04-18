@@ -9,22 +9,31 @@
     }
     ////////////////////////////////////////////////////////  
    
-    if(isset($_POST['delete']))
+
+    if(isset($_GET['delete']))
     {
-        $delete="SELECT id_article FROM panier";
-        $statement=$connexion->prepare($delete);
-        $statement->execute();
-        $result=$statement->get_result(); 
+        $id=$_GET['delete'];
+        $query="DELETE from panier where id_article=?";
+        $statement =$connexion->prepare($query);
+        $statement->bind_param("i",$id); //i est le type de id, c'est int donc i 
+        $result=$statement->execute();
+
+        $query2 = "UPDATE article SET id_acheteur = NULL WHERE id_article = '$id'";
+        $statement=$connexion->prepare($query2);
+        $result = $statement->execute();
+
+
         if ($result)
         {   
         // Successful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Successful - article ajouté!'); window.location.href = '../panier.php';</script>";
+        echo "<script type='text/javascript'>alert('Successful - article supprimé!'); window.location.href = 'panier.php';</script>";
         }
         else
         {
         // Unsuccessful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'action2.php';</script>";
+        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'achats/action2.php';</script>";
         }
+        
     }
     
 
@@ -62,4 +71,7 @@
 
         
     }
+    
+    
+    
 ?>
