@@ -42,7 +42,7 @@
               <a class="nav-link " href="../accueil.php">| Accueil |<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="#">| Achats |</a>
+              <a class="nav-link" href="achats.php">| Achats |</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link  mx-1" href="../vendeur.php">| Vente |</a>
@@ -59,7 +59,7 @@
 
       <header>
         <div>
-            <a href="panier.html"><img class="panier col-lg-1" src="panier.jpg"></a>
+            <a href="../panier.php"><img class="panier col-lg-1" src="panier.jpg"></a>
             <a href="Inscription.html"><img class="panier col-lg-1" src="connexion.jpg"></a>
             <img class="lgo col-lg-1" src="lgo.jpg">
             <a href="#"><h1 class="titre">Toutes catégories</h1></a>

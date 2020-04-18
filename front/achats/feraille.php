@@ -48,7 +48,7 @@
               <a class="nav-link " href="../Inscription.html">| Catégories |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  mx-3" href="#">| Vente |</a>
+                <a class="nav-link  mx-3" href="../vendeur.php">| Vente |</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  ml-1" href="../panier.php">| Panier |</a>
