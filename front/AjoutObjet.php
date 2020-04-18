@@ -64,7 +64,7 @@
 
         <input type="text" class="form-control taille" name="nom_article" placeholder="Nom de l'article"><br>
         <label for="description1">Description de l'objet en une phrase</label><br>
-        <textarea name=s"description1" rows="2" cols="40"> </textarea>
+        <textarea name="description1" rows="2" cols="40"> </textarea>
         <br>
         <label for="description2">Description de l'objet</label><br>
         <textarea name="description2" rows="7" cols="40"> </textarea></form>
