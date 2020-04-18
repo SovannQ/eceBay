@@ -64,48 +64,6 @@
     </nav>
 
 
-    <div class="container-fluid emp-profile">
-        <form method="post">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
-                            alt="" />
-                        <div class="file btn btn-lg btn-primary">
-                            Changer la photo
-                            <input type="file" name="photo">
-                            
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6">
-                    <div class="profile-head">
-                        <h4>
-                            Bienvenue, <?= $_SESSION['mail'] ?>
-
-                        </h4>
-                        <a href="logout.php">Se déconnecter</a>
-                        <h5>
-                            <!-- VOIR connecter.php  -->
-                           Id vendeur : <?= $_SESSION['idvendeur']  ?> 
-                        </h5>
-                        <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                    aria-controls="home" aria-selected="true">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                    aria-controls="profile" aria-selected="false">Timeline</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
     <!-- acheteur-->
     <div class="container-fluid">
 
