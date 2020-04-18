@@ -42,10 +42,7 @@
               <a class="nav-link" href="achats.php">| Achats |</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="../Inscription.html">| Catégories |</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link  mx-3" href="#">| Vente |</a>
+                <a class="nav-link  mx-3" href="../vendeur.php">| Vente |</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  ml-1" href="../panier.php">| Panier |</a>
@@ -54,10 +51,6 @@
                 <a class="nav-link  ml-1" href="../back/admin_welcome.html">| Admin |</a>
               </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-          </form>
         </div>
       </nav>
 
@@ -113,15 +106,12 @@
                   <p style="color:white">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                   <?php  
                      $_SESSION['id_panier']= '2';
-                     var_dump($_SESSION['id_panier']);
                      $_SESSION['id_article']=$vid_article;
-                     var_dump($_SESSION['id_article']);
                      $_SESSION['vprix']=$vprix;
-                     var_dump($_SESSION['vprix']);
                   ?>
                   <form action="action2.php" method="post">
                   <input type="submit" class="btn btn-outline-success" name="ajouter_au_panier" value="Ajouter au panier">
-                  <a href="#"><button type="button" class="btn btn-success">Voir panier</button></a>
+                  <a href="../panier.php"><button type="button" class="btn btn-success">Voir panier</button></a>
                   </form>
                   </ul>
                 </div>

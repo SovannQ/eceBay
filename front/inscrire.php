@@ -1,7 +1,7 @@
 <?php 
     ////////////////////////////////////////////////////////
     // connexion à la DB (autre approche que le cours, plus simple)
-    $connexion = new mysqli("localhost", "root","rien","ecebay");
+    $connexion = new mysqli("localhost", "root","","ecebay");
 
     if($connexion->connect_error){
         die("Erreur de connexion.".$connexion->connect_error);
@@ -17,7 +17,7 @@
 
         $nom= $_POST['nom'];
         $mail= $_POST['mail'];
-        $mdp = md5($_POST["mdp"]);
+        $mdp = $_POST["mdp"];
 
         $query="SELECT COUNT(*) AS nb FROM vendeur WHERE mail='$mail'";
     
@@ -35,7 +35,7 @@
             if($row['nb']=='0'){
 
                 
-                echo "<script type='text/javascript'>alert('Le compte est créé, veuillez vous connecter.'); window.location.href = 'inscription.html';</script>";
+                echo "<script type='text/javascript'>alert('Le compte est créé, veuillez vous connecter.'); window.location.href = 'inscription.php';</script>";
 
                 $sql="INSERT INTO vendeur(nom_vendeur,mail,mdp)VALUES(?,?,?)";
                 $statement=$connexion->prepare($sql);
@@ -73,7 +73,7 @@
 
         $nom= $_POST['nom'];
         $mail= $_POST['mail'];
-        $mdp = md5($_POST["mdp"]);
+        $mdp = $_POST["mdp"];
 
         ///////////////////////////////
 
@@ -109,7 +109,7 @@
             if($row['nb']=='0'){
 
                 
-                echo "<script type='text/javascript'>alert('Le compte est créé, veuillez vous connecter.'); window.location.href = 'inscription.html';</script>";
+                echo "<script type='text/javascript'>alert('Le compte est créé, veuillez vous connecter.'); window.location.href = 'inscription.php';</script>";
 
                 $sql="INSERT INTO acheteur(nom_acheteur,mail,mdp)VALUES(?,?,?)";
                 $statement=$connexion->prepare($sql);

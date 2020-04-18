@@ -14,8 +14,11 @@
         
         $nom_article=$_POST['nom_article'];
         $description1=$_POST['description1'];
+        $description2=$_POST['description2'];
         $categorie=$_POST['categorie'];
         $photo=$_FILES['photo']['name'];
+        $photo2=$_FILES['photo2']['name'];
+        
 
         
         $upload="photos/".$photo;
@@ -27,13 +30,14 @@
         $typevente=$_POST['typevente'];
         
 
-        $query="INSERT INTO article (photo,id_vendeur,nom_article,description1,categorie,prix,typevente)VALUES(?,?,?,?,?,?,?)";
+        $query="INSERT INTO article (photo,photo2,id_vendeur,nom_article,description1,description2,categorie,prix,typevente)VALUES(?,?,?,?,?,?,?,?,?)";
         $statement=$connexion->prepare($query);
-        $statement->bind_param("sssssis",$photo,$id_vendeur,$nom_article,$description1,$categorie,$prix,$typevente);
+        $statement->bind_param("sssssssis",$photo,$photo2,$id_vendeur,$nom_article,$description1,$description2,$categorie,$prix,$typevente);
         $result = $statement->execute();
         
 
         move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
+        move_uploaded_file($_FILES['photo2']['tmp_name'], $upload);
         header('location:vendeur.php');
 
 
@@ -91,6 +95,8 @@
 
         move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
 
+        header("location:vendeur.php");
+
 
 
 
@@ -128,6 +134,8 @@
         $result = $statement->execute();
 
         move_uploaded_file($_FILES['bg']['tmp_name'], $upload);
+
+        header("location:vendeur.php");
 
 
 

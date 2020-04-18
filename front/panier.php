@@ -1,3 +1,8 @@
+<?php
+    include 'achats/action.php';
+    include 'achats/action2.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -77,30 +82,26 @@
                                     <th scope="col" class="text-right">Prix</th>
                                     <th> </th>
                                 </tr>
-                            </thead>
+                            </thead>                                
+                            <?php 
+                                $var=$_SESSION['idacheteur'];
+                                $query="SELECT * from article WHERE id_acheteur = '$var'";
+                                $statement=$connexion->prepare($query);
+                                $statement->execute();
+                                $result=$statement->get_result();
+                            ?>
                             <tbody>
-                                <tr>
-                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                    <td>Product Name Dada</td>
-                                    <td>In stock</td>
-                                    <td class="text-right">124,90 €</td>
-                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                    <td>Product Name Toto</td>
-                                    <td>In stock</td>
-                                    <td class="text-right">33,90 €</td>
-                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                    <td>Product Name Titi</td>
-                                    <td>In stock</td>
-                                    <td class="text-right">70,00 €</td>
-                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                                </tr>
-
+                                <?php while($row=$result->fetch_assoc()){ ?>
+                                    <tr>
+                                        <td><img src="<?= $row['photo'];?>" /> </td>
+                                        <td><?= $row['nom_article'];?></td>
+                                        <td><?= $row['id_article'];?></td>
+                                        <td class="text-right"><?= $row['prix'];?></td>
+                                        <form>
+                                            <td class="text-right"><input type="submit" class="btn btn-sm btn-danger" name="delete" value="Effacer l'article"><i class="fa fa-trash"></i> </<i> </td>
+                                        </form>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>

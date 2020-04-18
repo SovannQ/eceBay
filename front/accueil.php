@@ -27,7 +27,7 @@
 <body class="fond" > 
 
         <!-- Menu -->
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
             <a class="navbar-brand" href="#">Menu</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -39,16 +39,16 @@
                   <a class="nav-link " href="#">| Accueil |<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item mx-3">
-                  <a class="nav-link" href="achats/achats.php">| Achats |</a>
+                  <a class="nav-link" href="Inscription.php">| Achats |</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  mx-3" href="vendeur.php">| Vente |</a>
+                    <a class="nav-link  mx-3" href="Inscription.php">| Vente |</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link  ml-1" href="admin_welcome.html">| Admin |</a>
+                    <a class="nav-link  ml-1" href="Inscription.php">| Admin |</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link  ml-1" href="panier.php">| Panier |</a>
+                    <a class="nav-link  ml-1" href="Inscription.php">| Panier |</a>
                   </li>
               </ul>
           </nav>

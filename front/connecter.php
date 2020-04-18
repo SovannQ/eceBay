@@ -94,16 +94,23 @@
 
             if($row){
 
+                $query="SELECT id_acheteur FROM acheteur WHERE mail='$mail'";
+                $statement = $connexion->query($query);
+
+                $sisi=$statement->fetch_assoc();
+                $id_acheteur=$sisi['id_acheteur'];
+
+                $_SESSION['idacheteur']=$id_acheteur;
+
                 $_SESSION['mail']=$mail;
-                header("location:vendeur.php");
+                header("location: achats/achats.php");
             
             }
             else{
-                
-                echo "<script type='text/javascript'>alert('ERREUR - COMPTE NON RECONNU, VEUILLEZ REESSAYEZ'); window.location.href = 'Inscription.php';</script>";
-                
+                // echo "<script type='text/javascript'>alert('COMPTE ACHETEUR NON RECONNU'); window.location.href = 'Inscription.php';</script>";
             }
         }
+
 
         if($check=="admin"){
 

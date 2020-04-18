@@ -77,6 +77,8 @@
 
 
     <input type="submit" class="form-control" placeholder="Se connecter" name="login">
+    <a href="InscriptionAcheteur.php"><input type="button" class="form-control" value="S'inscrire en tant qu'acheteur" ></a>
+    <a href="InscriptionVendeur.php"><input type="button" class="form-control" value="S'inscrire en tant que vendeur"></a>
 
 
 

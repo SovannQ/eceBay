@@ -48,7 +48,7 @@
               <a class="nav-link " href="../Inscription.html">| Catégories |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  mx-3" href="#">| Vente |</a>
+                <a class="nav-link  mx-3" href="../vendeur.php">| Vente |</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  ml-1" href="../panier.php">| Panier |</a>
@@ -124,7 +124,7 @@
                         </ul>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#"><?= $row['nom_article'];?>  |  <?= $row['type'];?>  |  <?= $row['categorie'];?></a></h3>
+                        <h3 class="title"><a href="#"><?= $row['nom_article'];?>  |  <?= $row['typevente'];?>  |  <?= $row['categorie'];?></a></h3>
                         <p><?= $row['description'];?></p>
                         <div class="price">
                         <?= $row['prix'];?> euros

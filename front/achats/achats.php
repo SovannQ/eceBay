@@ -1,5 +1,6 @@
 <?php
     include 'action.php';
+    include '../connecter.php';
 ?>
 
 
@@ -43,7 +44,7 @@
               <a class="nav-link " href="../accueil.php">| Accueil |<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="#">| Achats |</a>
+              <a class="nav-link" href="achats.php">| Achats |</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link  mx-1" href="../vendeur.php">| Vente |</a>
@@ -60,7 +61,7 @@
 
       <header>
         <div>
-            <a href="panier.html"><img class="panier col-lg-1" src="panier.jpg"></a>
+            <a href="../panier.php"><img class="panier col-lg-1" src="panier.jpg"></a>
             <a href="Inscription.html"><img class="panier col-lg-1" src="connexion.jpg"></a>
             <img class="lgo col-lg-1" src="lgo.jpg">
             <a href="#"><h1>Toutes catégories</h1></a>
@@ -86,7 +87,6 @@
             </li>
             </ul>
         </div>
-
         <div class="dropdown ">
             <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Type de vente
@@ -120,7 +120,7 @@
                         </ul>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#"><?= $row['nom_article'];?>  |  <?= $row['type'];?>  |  <?= $row['categorie'];?></a></h3>
+                        <h3 class="title"><a href="#"><?= $row['nom_article'];?>  |  <?= $row['typevente'];?>  |  <?= $row['categorie'];?></a></h3>
                         <p><?= $row['description1'];?></p>
                         <div class="price">
                         <?= $row['prix'];?> euros
