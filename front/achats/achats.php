@@ -1,5 +1,6 @@
 <?php
     include 'action.php';
+    include '../connecter.php';
 ?>
 
 
@@ -86,7 +87,6 @@
             </li>
             </ul>
         </div>
-
         <div class="dropdown ">
             <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Type de vente
@@ -120,7 +120,7 @@
                         </ul>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#"><?= $row['nom_article'];?>  |  <?= $row['type'];?>  |  <?= $row['categorie'];?></a></h3>
+                        <h3 class="title"><a href="#"><?= $row['nom_article'];?>  |  <?= $row['typevente'];?>  |  <?= $row['categorie'];?></a></h3>
                         <p><?= $row['description1'];?></p>
                         <div class="price">
                         <?= $row['prix'];?> euros

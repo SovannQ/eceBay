@@ -126,7 +126,11 @@
 
             <?php  if($row){ ?>
             
-                <li id="item-une" style="background-image:url('../photos/livre.jpg')" >
+                <style>
+                body{
+                    
+                }
+                </style>
             
             <?php } ?>
 
@@ -150,12 +154,20 @@
                     <input type="file" class="custom-file" name="photo">
                 </div>
 
+                <div class="form-group ">
+                    <input type="file" class="custom-file" name="photo2">
+                </div>
+
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Nom de l'article" name="nom_article">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Description" name="description1">
+                    <input type="text" class="form-control" placeholder="Petite description" name="description1">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Grande description" name="description2">
                 </div>
 
                 <div class="form-group">

@@ -82,9 +82,10 @@
                                     <th scope="col" class="text-right">Prix</th>
                                     <th> </th>
                                 </tr>
-                            </thead>
+                            </thead>                                
                             <?php 
-                                $query="SELECT * from article WHERE article.id_article IN(SELECT panier.id_article FROM panier)";
+                                $var=$_SESSION['idacheteur'];
+                                $query="SELECT * from article WHERE id_acheteur = '$var'";
                                 $statement=$connexion->prepare($query);
                                 $statement->execute();
                                 $result=$statement->get_result();
@@ -96,7 +97,9 @@
                                         <td><?= $row['nom_article'];?></td>
                                         <td><?= $row['id_article'];?></td>
                                         <td class="text-right"><?= $row['prix'];?></td>
-                                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                        <form>
+                                            <td class="text-right"><input type="submit" class="btn btn-sm btn-danger" name="delete" value="Effacer l'article"><i class="fa fa-trash"></i> </<i> </td>
+                                        </form>
                                     </tr>
                                 <?php } ?>
                             </tbody>
