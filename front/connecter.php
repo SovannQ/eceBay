@@ -55,6 +55,15 @@
 
                 //var_dump($_SESSION['id_vendeur']);
 
+                $query="SELECT nom_vendeur FROM vendeur WHERE mail='$mail'";
+
+                $statement = $connexion->query($query);
+
+                $sisi=$statement->fetch_assoc();
+                $nom_vendeur=$sisi['nom_vendeur'];
+
+                $_SESSION['nomvendeur']=$nom_vendeur;
+                
                 $_SESSION['mail']=$mail;
                
                 header("location:vendeur.php");
