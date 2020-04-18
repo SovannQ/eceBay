@@ -2,7 +2,7 @@
 
     ////////////////////////////////////////////////////////
     // connexion à la DB (autre approche que le cours, plus simple)
-    $connexion = new mysqli("localhost", "root","","ecebay");
+    $connexion = new mysqli("localhost", "root","rien","ecebay");
 
     if($connexion->connect_error){
         die("Erreur de connexion.".$connexion->connect_error);
@@ -26,7 +26,7 @@
         $vphoto2=$row['photo2'];
         $vid_vendeur=$row['id_vendeur'];
         $vnom_article=$row['nom_article'];
-        $vdescription=$row['description'];
+        $vdescription=$row['description1'];
         $vcategorie=$row['categorie'];
         $vprix=$row['prix'];
         $vtype=$row['type'];

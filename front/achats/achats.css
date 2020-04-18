@@ -76,15 +76,6 @@
 }
 
 
-.page-footer {
-    background-color: #000;
-    color: #ccc;
-    padding: 60px 0 30px;
-   }
-   .footer-copyright {
-    color: #666;
-    padding: 40px 0;
-   }
 
 .bordure{
     border: solid;
@@ -121,6 +112,8 @@
 
 .menuleft a{
     color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: large;
 }
 
 .lgo{
@@ -132,3 +125,4 @@
 	width: 7%;
 	float: right;
 }
+

@@ -53,8 +53,7 @@
         <h1>Formulaire inscription Vendeur de ECEbay</h1>
     </div>
     <br>
-
-    
+  
 
     <form action="inscrire.php" method="post" align=center>
 
