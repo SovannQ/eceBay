@@ -48,7 +48,7 @@ body {
 
 h1{
 	font-size: 400%;
-	color: black;
+	color: rgb(255, 255, 255);
 	font-weight: bold;
 }
 
@@ -172,7 +172,7 @@ color: #ffffff;
 
 .page-footer {
  background-color: #000;
- color: #ccc;
+ color: rgb(206, 25, 25);
  padding: 60px 0 30px;
 }
 .footer-copyright {
