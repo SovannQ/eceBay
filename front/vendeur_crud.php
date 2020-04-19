@@ -113,9 +113,9 @@
         $upload="photos/".$bg;
         
         /////////////////////////////////////////////////////////////////////////// supprimer l'ancienne photo du dossier photos pour laisser place à la nouvelle
-        if($bg==NULL){
+        if($bg=NULL){
 
-            $delete="SELECT bg FROM vendeur WHERE id_vendeur='$id_vendeur'";
+        $delete="SELECT bg FROM vendeur WHERE id_vendeur='$id_vendeur'";
         $statement2=$connexion->prepare($delete);
         $statement2->execute();
         $result2=$statement2->get_result(); 
