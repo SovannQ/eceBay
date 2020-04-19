@@ -22,11 +22,10 @@ if(isset($_POST['paiement'])){
     $dateexp=$_POST['dateexp'];
     $cvv=$_POST['cvv'];
     $card = isset($_POST["card"])? $_POST["card"] :"";
+    $id_info_paiement=$_SESSION['idacheteur'];
 
-    //$id_info_paiement=$_SESSION['idacheteur'];
-
-    $query="SELECT * FROM info_paiement where id_info_paiement=4 AND type_carte='mastercard' AND num_carte=888888888 AND nom_carte='MATHIAS' AND dateexp='2020-05-22' AND cvv='666'";
-    //$query="SELECT * FROM info_paiement where id_info_paiement='$id_info_paiement' AND type_carte='$card' AND num_carte='$numerocb' AND nom_carte='$nom_carte' AND dateexp='$dateexp' AND cvv='$cvv'";
+   // $query="SELECT * FROM info_paiement where id_info_paiement=4 AND type_carte='mastercard' AND num_carte=888888888 AND nom_carte='MATHIAS' AND dateexp='2020-05-22' AND cvv='666'";
+    $query="SELECT * FROM info_paiement where id_info_paiement='$id_info_paiement' AND type_carte='$card' AND num_carte='$numerocb' AND nom_carte='$nom_carte' AND dateexp='$dateexp' AND cvv='$cvv'";
     
     //on affichera l'adresse dans l'affichage en front
     $statement=$connexion->prepare($query);
@@ -42,7 +41,6 @@ if(isset($_POST['paiement'])){
         //$sisi=$statement->fetch_assoc();
         //var_dump($row);
         echo "PAIEMENT VALIDE, BRAVO, VOUS ALLEZ RECEVOIR UN MAIL DE CONFIRMATION POUR VOTRE COMMANDE.";
-
         //Envoyer un mail
 
         require_once('PHPMailer/PHPMailerAutoload.php');

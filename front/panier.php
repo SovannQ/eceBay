@@ -99,10 +99,12 @@
                 <div class="col mb-2">
                     <div class="row">
                         <div class="col-sm-12  col-md-6">
-                           <a href="achats.html"><button class="btn btn-block btn-light">Continue Shopping</button></a>
+                           <a href="achats/achats.php"><button class="btn btn-block btn-light">Continuer les achats</button></a>
                         </div>
                         <div class="col-sm-12 col-md-6 text-right">
-                            <button class="btn btn-block btn-success">Checkout</button>
+                            <a href="../back/paiement_screen.php">
+                                <button class="btn btn-block btn-success" name="payer">Payer</button>
+                            </a>
                         </div>
                     </div>
                 </div>
