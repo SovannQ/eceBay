@@ -70,6 +70,7 @@
                                     <th scope="col"> </th>
                                     <th scope="col">Produit</th>
                                     <th scope="col">Prix</th>
+                                    <th scope="col" class="text-right">Action</th>
                                     <th scope="col" class="text-right">Gérer</th>
                                     <th> </th>
                                 </tr>
@@ -91,8 +92,8 @@
                                             <?php if($row['typevente'] == 'enchere') { ?>
                                                         <td><form action="../back/enchere.php" method="post">
                                                             <input type="text"  name="offre">
-                                                            <a href="panier.php?enchere=<?=$row['id_article']; ?>"><input  type="submit" value="encherir" name="enchere"></a>
-                                                        </form></td>                                            
+                                                                <input  type="submit" value="encherir" name="enchere">
+                                                        </form></td>                        
                                             <?php } ?>
                                         <form>
                                             <td class="text-right"><a href="panier.php?delete=<?=$row['id_article']; ?>" class="badge badge-danger">Supprimer</a></td>

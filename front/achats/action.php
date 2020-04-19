@@ -20,7 +20,7 @@
         $statement->execute();
         $result=$statement->get_result();
         $row=$result->fetch_assoc();
-        
+
         $vid_article=$row['id_article'];
         $vphoto=$row['photo'];
         $vphoto2=$row['photo2'];
