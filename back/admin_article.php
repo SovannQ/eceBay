@@ -63,34 +63,48 @@
             <div class="col-md-4">
 
                 <h2 class="text-center">Ajouter/modifier un article</h2>
-                <form action="admin_crud_article.php" method="post">
-                    <input type="hidden" name="id_article" value="<?= $id_article; ?>">
+                <form action="admin_crud_article.php" method="post" enctype="multipart/form-data" class="milieu">
+                
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nom" name="nom_article"
-                            value="<?= $nom_article; ?>">
-                    </div>
+                <div class="form-group ">
+                    <input type="file" class="custom-file" name="photo">
+                </div>
 
-                    <div class="form-group">
-                        <input type="mail" class="form-control" placeholder="Mail" name="mail" value="<?= $mail; ?>">
-                    </div>
+                <div class="form-group ">
+                    <input type="file" class="custom-file" name="photo2">
+                </div>
 
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Mot de passe" name="mdp"
-                            value="<?= $mdp; ?>">
-                    </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nom de l'article" name="nom_article">
+                </div>
 
-                    <div class="form-group">
-                        <?php if($updated==true) { ?>
-                        <input type="submit" class="btn btn-info btn-block" value="Mettre à jour" name="updated">
-                        <?php } else { ?>
-                        <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
-                            name="ajouter_article">
-                        <?php } ?>
-                    </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Petite description" name="description1">
+                </div>
 
-                </form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Grande description" name="description2">
+                </div>
 
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Categorie" name="categorie">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="prix" name="prix">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="typevente" name="typevente">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
+                        name="ajouterarticle">
+
+
+                </div>
+            </form>
             </div>
 
             <!-- DB article -->

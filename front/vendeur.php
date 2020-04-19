@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles2.css">
     <link rel="stylesheet" type="text/css" href="admin_styles.css">
     <link rel="stylesheet" type="text/css" href="vendeur.css">
 
@@ -19,7 +20,7 @@
 
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+    <nav class="navbar navbar-expand-lg navbar-light jolie">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +70,7 @@
 
         <!-- PHOTO DE PROFIL -->
         <!-- dans la bdd -->
-        <div class="col-md-12">
+        <div class="col-md-12 jolie">
             <h2>
                 <center>Profil</center>
             </h2>
@@ -98,7 +99,6 @@
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo">
                 </div>
-
                 <div class="form-group ">
                     <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter une photo de profil" name="submitphoto">
                 </div>
@@ -116,7 +116,7 @@
                 <?php
 
                 $id_vendeur=$_SESSION['idvendeur'];
-                $query="SELECT bg from vendeur WHERE id_vendeur='$id_vendeur'";
+                $query="SELECT bg from vendeur WHERE id_vendeur=$id_vendeur";
                 $statement=$connexion->prepare($query);
                 $statement->execute();
                 $result=$statement->get_result();
@@ -139,15 +139,16 @@
             
         </div>
 
-        <h2>Bienvenue, <?= $_SESSION['nomvendeur'] ?></h2>
-        <h2>Mail : <?= $_SESSION['mail'] ?></h2>
-        <h2>Id vendeur : <?= $_SESSION['idvendeur'] ?></h2>
+        <div class="jolie">
+        <h4>Bienvenue: <?= $_SESSION['nomvendeur'] ?></h4>
+        <h4>Mail : <?= $_SESSION['mail'] ?></h4>
+        <h4>Id vendeur : <?= $_SESSION['idvendeur'] ?></h4></div>
             <br>
         <!-- Ajouter.modifier un acheteur dans la table acheteur-->
 
-        <div class="col-md-12">
-            <h2>Ajouter un article</h2>
-            <form action="vendeur_crud.php" method="post" enctype="multipart/form-data">
+        <div class="col-md-12 jolie">
+            <h4>Ajouter un article:</h4>
+            <form action="vendeur_crud.php" method="post" enctype="multipart/form-data" class="milieu">
                 <input type="hidden" name="id_acheteur" value="<?= $id_acheteur; ?>">
 
                 <div class="form-group ">
@@ -199,7 +200,7 @@
 
     <!-- DB acheteur -->
 
-    <div class="col-md-12">
+    <div class="col-md-12 jolie">
 
         <?php
 
@@ -213,8 +214,8 @@
 
 
 
-        <h2 class="text-center">Vos articles</h2>
-        <table class="table table-striped ">
+        <h2 class="text-center jolie">Vos articles</h2>
+        <table class="table table-striped jolie">
             <thead>
                 <tr>
                     <th>ID de l'article</th>

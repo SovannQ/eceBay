@@ -16,14 +16,13 @@
   <script type="text/javascript">
 
   </script>
-
 </head>
 
 <body>
 
 
 <!-- Menu -->
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+<nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">Menu</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -58,11 +57,16 @@
 
     <div class="form-group">
       
-      <input type="text" class="form-control" placeholder="Email" name="mail">
+  <table align=center>
+    <td><td>
+    <div class=titre>
+                    <p><br>Identification:</p>
+                </div>
+      <input type="text" class="form-control" placeholder="Email" name="mail"><br>
       <input type="text" class="form-control" placeholder="Mot de passe" name="mdp">
-    </div>
-
-    
+      <small id="emailHelp" class="form-text text-muted">Ne jamais transmettre ses identifiants à un tiers</small><br>
+      
+      
       <div class="radio">
         <label><input type="radio" name="check" value="vendeur">Vendeur</label>
       </div>
@@ -73,12 +77,27 @@
 
       <div class="radio">
         <label><input type="radio" name="check" value="admin">Admin</label>
-      </div>
+      </div><br>
 
-
-    <input type="submit" class="form-control" placeholder="Se connecter" name="login">
-    <a href="InscriptionAcheteur.php"><input type="button" class="form-control" value="S'inscrire en tant qu'acheteur" ></a>
+      
+    <input type="submit" class="form-control" placeholder="Se connecter" name="login"><br><br><br>
+   
+    <div class=titre>
+                    <h7><br>S'inscrire:</h7>
+                </div>
+    <a href="InscriptionAcheteur.php"><input type="button" class="form-control" value="S'inscrire en tant qu'acheteur" ></a><br>
     <a href="InscriptionVendeur.php"><input type="button" class="form-control" value="S'inscrire en tant que vendeur"></a>
+
+
+      </td></td>
+
+    </table>
+    </div>
+
+    
+      
+
+    
 
 
 

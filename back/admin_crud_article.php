@@ -1,7 +1,6 @@
-<?php
+<?php 
 
-    $id_article="";
-    $nom_article="";
+  
     $mail="";
     $mdp="";
     $updated=false;
@@ -19,38 +18,50 @@
 
    
 
-    if(isset($_POST['ajouter_article'])){
-
+    if(isset($_POST['ajouterarticle'])){
+        
         $nom_article=$_POST['nom_article'];
         $description1=$_POST['description1'];
         $description2=$_POST['description2'];
         $categorie=$_POST['categorie'];
-
         $photo=$_FILES['photo']['name'];
-        $upload="photo_article/".$photo;
-
-        $query="INSERT INTO article(nom_article,description1,description2,categorie,photo)VALUES(?,?,?,?,?)";
-        $statement=$connexion->prepare($query);
-        $statement->bind_param("sssss",$nom_article,$description1,$description2,$categorie,$upload);
-        $result = $statement->execute();
+        $photo2=$_FILES['photo2']['name'];
         
-        move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
 
-        //header('')
+        
+        $upload="photos/".$photo;
 
-        //empêche la redirection vers un onglet vide après le traitement php
+        $id_admin='0';
+        
+    
+        $prix=$_POST['prix'];
+        $typevente=$_POST['typevente'];
+        
+
+        $query="INSERT INTO article (photo,photo2,id_vendeur,nom_article,description1,description2,categorie,prix,typevente)VALUES(?,?,?,?,?,?,?,?,?)";
+        $statement=$connexion->prepare($query);
+        $statement->bind_param("ssissssis",$photo,$photo2,$id_admin,$nom_article,$description1,$description2,$categorie,$prix,$typevente);
+        $result = $statement->execute();
+        var_dump($result);
         if ($result)
-        {   
+        {
+
         // Successful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Successful - article ajouté!'); window.location.href = 'admin_crud_article.php';</script>";
+        //echo "<script type='text/javascript'>alert('Successful - Record deleted!'); window.location.href = 'admin_article.php';</script>";
         }
         else
         {
         // Unsuccessful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_crud_article.php';</script>";
+        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_article.php';</script>";
         }
 
+        move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
+        move_uploaded_file($_FILES['photo2']['tmp_name'], $upload);
+        header('location:admin_article.php');
+
         
+        
+
     }
 
 

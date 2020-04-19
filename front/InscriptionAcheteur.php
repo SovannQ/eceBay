@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
     <link rel="stylesheet" type="text/css" href="Inscription.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -46,8 +46,8 @@
         </div>
     </nav>
     <br>
-    <div class="text-center titre">
-        <h1>Formulaire d'inscription Acheteur</h1>
+    <div class=titre>
+       <p> Formulaire d'inscription en tant qu'acheteur  </p>
     </div>
     <br>
 
@@ -58,63 +58,73 @@
     <form action="inscrire.php" method="post" align=center>
         <div class="form-group ecriture">
             <div class=titre>
-                <p><br>Identification:</p>
+                <p><br>Vos identifiants:</p>
             </div>
             <br>
-            <label>Nom: </label>
-            <input type="text" class="form-control taille" name="nom" placeholder="Nom">
-        </div>
-        <div class="form-group ecriture">
-            <label>Email address: </label>
-            <input type="text" class="form-control taille" name="mail" placeholder="Enter email">
-        </div>
 
-        <div class="form-group ecriture">
-            <label> Mot de passe: </label>
+            <table align=center>
+            <tr><td>
+            <input type="text" class="form-control taille" name="nom" placeholder="Nom"><br>
+       
+        
+            <input type="text" class="form-control taille" name="mail" placeholder="Enter email"><br>
+        
             <input type="password" class="form-control taille" name="mdp" placeholder="Password">
-            <small id="emailHelp" class="form-text text-muted">Ne jamais transmettre ses identifiants à un tiers</small>
-        </div>
+            <small id="emailHelp" class="form-text text-muted">Ne jamais transmettre ses identifiants à un tiers</small></tr></td>
+      </table>
 
-        <table align=center><br>
-            <tr>
-                <div class=titre>
-                    <p>Domicile:</p>
-                </div>
-                <td><input type="text" class="form-control" placeholder="Nom" name="nom_livraison"></td>
-                <td><input type="text" class="form-control" placeholder="Rue" name="rue"></td>
-                <td><input type="text" class="form-control" placeholder="Ville" name="ville"></td>
-            </tr>
-            <tr>
-                <td><input type="text" class="form-control" placeholder="Code Postal" name="code_postal"></td>
-                <td><input type="text" class="form-control" placeholder="Pays" name="pays"></td>
-            </tr>
+
+      
+      <div class=titre>
+                <p><br>Domicile:</p>
+            </div>
+
+        <table align=center width=400px >
+            
+                <tr><td>
+                <input type="text" class="form-control" placeholder="Nom de livraison" name="nom_livraison">
+
+                <input type="text" class="form-control" placeholder="Rue" name="rue">
+                <input type="text" class="form-control" placeholder="Ville" name="ville">
+           
+                <input type="text" class="form-control" placeholder="Code Postal" name="code_postal">
+                <input type="text" class="form-control" placeholder="Pays" name="pays"> </tr></td>
         </table>
         <br>
-        <table align=center><br>
-            <tr>
-                <div class=titre>
+
+
+        <div class=titre>
                     <p>Information bancaire:</p>
                 </div>
-            </tr>
+
+        <table align=center>
+            
             <tr>
                 <input type="radio" name="card" value="visa">Visa
                 <input type="radio" name="card" value="mastercard">MasterCard
-                <input type="radio" name="card" value="americanexpress"> American Express</tr>
-            <br>
+                <input type="radio" name="card" value="americanexpress"> American Express</tr></table>
+            
+            <table align=center>   
+            <tr>
             <td><input type="number" class="form-control" placeholder="N°de carte bancaire" name="numerocb"></td>
             <td><input type="text" class="form-control" placeholder="Nom du propriétaire" name="nom_carte"></td>
             </tr>
+            <br>
             <tr>
                 <td><input type="date" class="form-control" placeholder="Date expiration" name="date"></td>
                 <td><input type="text" class="form-control" placeholder="CVV" name="cvv"></td>
             </tr>
+           
         </table>
         <br>
-        <input type="checkbox" id="condition" name="condition" value="condition">
+        <table align=center>
+        <tr> <td> <input type="checkbox" id="condition" name="condition" value="condition">
         <label for="condition"> <a
                 href="https://www.youtube.com/watch?v=L_KikUmaAxg&list=RDMML_KikUmaAxg&start_radio=1">J'accepte les
                 conditions utilisateur & contrat légal</a></label><br>
-        <input type="submit" name="inscription_acheteur" value="S'inscrire" id="inscription">
+        <input type="submit" name="inscription_acheteur" value="S'inscrire" id="inscription" class="form-control soumettre" >
+    </td></tr></table>
+        
 
 
     </form>
