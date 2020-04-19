@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="admin_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <link rel="stylesheet" type="text/css" href="../back/admin_styles.css">
     <link rel="stylesheet" type="text/css" href="vendeur.css">
 
     <title>VENDEUR</title>
@@ -21,7 +22,7 @@
 
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+    <nav class="navbar navbar-expand-lg navbar-light jolie" style="background-color: white">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,17 +31,38 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item active ml-5">
+                    <a class="nav-link " href="index2.html">| Accueil |<span class="sr-only">(current)</span></a>
+                </li>
                 <li class="nav-item mx-3">
-                    <a class="nav-link" href="Inscription.php">| Achats |</a>
+                    <a class="nav-link" href="achats/achats.php">| Achats |</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">| Catégories |</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled mx-3" href="#">| Vente |</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled ml-1" href="Inscription.php">| Admin |</a>
+                    <a class="nav-link disabled ml-1" href="#">| Admin |</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
                 </li>
             </ul>
-            <a href="../Inscription.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+            </form>
         </div>
     </nav>
 
@@ -50,9 +72,10 @@
 
         <!-- PHOTO DE PROFIL -->
         <!-- dans la bdd -->
-        <div class="col-md-12">
+        <div class="col-md-12 jolie">
             <h2>
                 <center>Profil</center>
+                <br>
             </h2>
             <?php
 
@@ -74,7 +97,10 @@
             
             <?php } ?>
 
-
+            
+        <h4>Vendeur: <?= $_SESSION['nomvendeur'] ?></h4>
+        <h4>Votre adresse mail : <?= $_SESSION['mail'] ?></h4>
+        <h4>Votre n° d'identification vendeur : <?= $_SESSION['idvendeur'] ?></h4>
 
 
             <?php
@@ -89,9 +115,9 @@
             ?>
 
             <?php  if($row){ ?>
-            <td>
-                <center><img src="photos/<?= $row['photo'];?>" width="300px"></center>
-            </td>
+            
+                <center><img src="photos/<?= $row['photo'];?>" width="200px" height="200px"></center>
+            
             <?php } ?>
 
             <br>
@@ -101,7 +127,6 @@
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo">
                 </div>
-
                 <div class="form-group ">
                     <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter une photo de profil" name="submitphoto">
                 </div>
@@ -123,17 +148,25 @@
             
         </div>
 
-        <h2>Bienvenue, <?= $_SESSION['nomvendeur'] ?></h2>
-        <h2>Mail : <?= $_SESSION['mail'] ?></h2>
-        <h2>Id vendeur : <?= $_SESSION['idvendeur'] ?></h2>
+        
             <br>
         <!-- Ajouter.modifier un acheteur dans la table acheteur-->
 
-        <div class="col-md-12">
+        <div class="milieu">
+             <table align=center>
+                 <td>
             <h2>Ajouter un article</h2>
 
+            <div class="form-group">
+                <input type="radio" name="type" value="enchere" id="e">Enchère
+                <input type="radio" name="type" value="Achat immediat" id="a">Achat immédiat
+                <input type="radio" name="type" value="Meilleure offre" id="m"> Meilleure offre</tr>
+
+            </div> </td>
+            </table>
 
             
+
 
 
             <form action="vendeur_crud.php" method="post" enctype="multipart/form-data">
@@ -146,6 +179,7 @@
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo2">
                 </div>
+           
 
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Nom de l'article" name="nom_article">
@@ -164,8 +198,11 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="date" class="form-control" placeholder="Date de fin de la vente" name="datefin">
+                <input type="radio" name="card" value="enchere">Ferraille
+                <input type="radio" name="card" value="Achat immédiat">Musée
+                <input type="radio" name="card" value="Meilleure offre"> VIP</tr>
                 </div>
+
 
                 <div class="form-group">
                     <input type="number" class="form-control" placeholder="prix" name="prix">
@@ -175,7 +212,9 @@
                     <input type="text" class="form-control" placeholder="typevente" name="typevente">
                 </div>
 
-                
+                <div class="form-group">
+                    <input type="date" class="form-control" placeholder="Date de fin de la vente" name="datefin">
+                </div>
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
@@ -199,7 +238,7 @@
 
     <!-- DB acheteur -->
 
-    <div class="col-md-12">
+    <div class="col-md-12 jolie">
 
         <?php
 

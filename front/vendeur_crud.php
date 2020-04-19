@@ -35,10 +35,28 @@
         $statement->bind_param("sssssssiss",$photo,$photo2,$id_vendeur,$nom_article,$description1,$description2,$categorie,$prix,$typevente,$datefin);
         $result = $statement->execute();
         
+        var_dump($typevente);
+        if($typevente=='enchere')
+        {
+            $queryy="SELECT id_article,prix FROM article WHERE nom_article= '$nom_article' AND id_vendeur = '$id_vendeur'";
+            $statement2=$connexion->prepare($queryy);
+            $result2 = $statement2->execute();
+            $result2=$statement2->get_result(); 
+            $row=$result2->fetch_assoc();
+
+            $id_article=$row['id_article'];
+            $prix=$row['prix'];
+            $_SESSION['idart']=$id_article;
+
+            $query="INSERT INTO enchere (id_article,nom_article,prix,datefin)VALUES(?,?,?,?)";
+            $statement=$connexion->prepare($query);
+            $statement->bind_param("isis",$id_article,$nom_article,$prix,$datefin);
+            $result = $statement->execute();
+        }
 
         move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
         move_uploaded_file($_FILES['photo2']['tmp_name'], $upload);
-        header('location:vendeur.php');
+        //header('location:vendeur.php');
 
 
         

@@ -1,6 +1,5 @@
 <?php
-    include 'achats/action.php';
-    include 'achats/action2.php';
+    include '../back/enchere.php'
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +91,7 @@
                                             <?php if($row['typevente'] == 'enchere') { ?>
                                                         <td><form action="../back/enchere.php" method="post">
                                                             <input type="text"  name="offre">
+                                                            <a href="panier.php?villa=<?= $row['id_article'];?>">Clique</a>
                                                                 <input  type="submit" value="encherir" name="enchere">
                                                         </form></td>                        
                                             <?php } ?>

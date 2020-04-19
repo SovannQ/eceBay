@@ -1,3 +1,30 @@
+.jolie {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    
+}
+
+.jolie h2{
+    font-family: 'Open Sans', sans-serif;
+    color:#85c8e2;
+    text-decoration: underline;
+    font-size: 40px;}
+
+    .jolie h4{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+    }
+        
+
+    
+
+.milieu{
+    
+    margin-left: 300px;
+    margin-right: 300px;
+    align-self: center;
+}
+
 .container-fluid{
     background-color:rgb(255,255,255,0.8);
 }
