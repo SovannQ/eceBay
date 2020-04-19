@@ -1,4 +1,4 @@
-<?php
+<?php 
 
     $id_article="";
     $nom_article="";
@@ -41,6 +41,43 @@
         }
 
         
+    }
+
+    if(isset($_POST['ajouterarticle'])){
+        
+        $nom_article=$_POST['nom_article'];
+        $description1=$_POST['description1'];
+        $description2=$_POST['description2'];
+        $categorie=$_POST['categorie'];
+        $photo=$_FILES['photo']['name'];
+        $photo2=$_FILES['photo2']['name'];
+        $id_vendeur='0';
+        
+
+        
+        $upload="../front/photos/".$photo;
+
+        $id_vendeur=$_SESSION['idvendeur'];
+        
+    
+        $prix=$_POST['prix'];
+        $typevente=$_POST['typevente'];
+        
+
+        $query="INSERT INTO article (photo,photo2,id_vendeur,nom_article,description1,description2,categorie,prix,typevente)VALUES(?,?,?,?,?,?,?,?,?)";
+        $statement=$connexion->prepare($query);
+        $statement->bind_param("sssssssis",$photo,$photo2,$id_vendeur,$nom_article,$description1,$description2,$categorie,$prix,$typevente);
+        $result = $statement->execute();
+        
+
+        move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
+        move_uploaded_file($_FILES['photo2']['tmp_name'], $upload);
+        header('location:admin_article.php');
+
+
+        
+        
+
     }
 
 

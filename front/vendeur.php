@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="vendeur.css">
 
     <title>VENDEUR</title>
+
+   
 </head>
 
 <body>
@@ -23,7 +25,7 @@
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -73,6 +75,28 @@
             <h2>
                 <center>Profil</center>
             </h2>
+            <?php
+
+                $id_vendeur=$_SESSION['idvendeur'];
+                $query="SELECT bg from vendeur WHERE id_vendeur='$id_vendeur'";
+                $statement=$connexion->prepare($query);
+                $statement->execute();
+                $result=$statement->get_result();
+                $row=$result->fetch_assoc()
+                
+            ?>
+
+            <?php  if($row){ ?>
+                <style>
+                    body{
+                         background-image: url("photos/<?= $row['bg']; ?>"); 
+                        }
+                </style>
+            
+            <?php } ?>
+
+
+
 
             <?php
 
@@ -113,22 +137,7 @@
                     <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter un fond d'écran" name="submitbg">
                 </div>
                 <!-- MARCHE PAS LE BACKGROUND BORDEL -->
-                <?php
-
-                $id_vendeur=$_SESSION['idvendeur'];
-                $query="SELECT bg from vendeur WHERE id_vendeur='$id_vendeur'";
-                $statement=$connexion->prepare($query);
-                $statement->execute();
-                $result=$statement->get_result();
-                $row=$result->fetch_assoc()
                 
-            ?>
-
-            <?php  if($row){ ?>
-            
-                <li id="item-une" style="background-image:url('../photos/livre.jpg')" >
-            
-            <?php } ?>
 
             </form>
 
@@ -143,6 +152,17 @@
 
         <div class="col-md-12">
             <h2>Ajouter un article</h2>
+
+            <div class="form-group">
+                <input type="radio" name="type" value="enchere" id="e">Enchère
+                <input type="radio" name="type" value="Achat immediat" id="a">Achat immédiat
+                <input type="radio" name="type" value="Meilleure offre" id="m"> Meilleure offre</tr>
+
+            </div>
+
+            
+
+
             <form action="vendeur_crud.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_acheteur" value="<?= $id_acheteur; ?>">
 
@@ -150,17 +170,32 @@
                     <input type="file" class="custom-file" name="photo">
                 </div>
 
+                <div class="form-group ">
+                    <input type="file" class="custom-file" name="photo2">
+                </div>
+
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Nom de l'article" name="nom_article">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Description" name="description1">
+                    <input type="text" class="form-control" placeholder="Petite description" name="description1">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Grande description" name="description2">
                 </div>
 
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Categorie" name="categorie">
                 </div>
+
+                <div class="form-group">
+                <input type="radio" name="card" value="enchere">Ferraille
+                <input type="radio" name="card" value="Achat immédiat">Musée
+                <input type="radio" name="card" value="Meilleure offre"> VIP</tr>
+                </div>
+
 
                 <div class="form-group">
                     <input type="number" class="form-control" placeholder="prix" name="prix">
@@ -170,6 +205,8 @@
                     <input type="text" class="form-control" placeholder="typevente" name="typevente">
                 </div>
 
+                
+
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
                         name="ajouterarticle">
@@ -177,9 +214,14 @@
 
                 </div>
             </form>
-        </div>
+            
 
-    </div>
+            
+            
+
+        </div>
+        
+    
 
 
 
@@ -201,8 +243,8 @@
 
 
 
-        <h2 class="text-center">Vos articles</h2>
-        <table class="table table-striped ">
+        <h2 class="text-center latable">Vos articles</h2>
+        <table class="table">
             <thead>
                 <tr>
                     <th>ID de l'article</th>
@@ -212,6 +254,7 @@
                     <th>Catégorie</th>
                     <th>Prix</th>
                     <th>Type de vente</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -239,7 +282,7 @@
 
 
     </div>
-
+    </div>
 
 
 </body>
