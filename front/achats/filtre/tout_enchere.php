@@ -50,14 +50,14 @@
                 <a class="nav-link  ml-1" href="../../Inscription.php">| Admin |</a>
               </li>
           </ul>
-          <a href="../Inscription.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
+          <a href="../../Inscription.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
 
         </div>
       </nav>
 
       <header>
         <div>
-            <a href="../panier.php"><img class="panier col-lg-1" src="../panier.jpg"></a>
+            <a href="../../panier.php"><img class="panier col-lg-1" src="../panier.jpg"></a>
             <img class="lgo col-lg-1" src="lgo.jpg">
             <a href="../achats.php"><h1 class="titre">Toutes catégories</h1></a>
         </div>
