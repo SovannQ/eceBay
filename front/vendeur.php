@@ -132,12 +132,6 @@
         <div class="col-md-12">
             <h2>Ajouter un article</h2>
 
-            <div class="form-group">
-                <input type="radio" name="type" value="enchere" id="e">Enchère
-                <input type="radio" name="type" value="Achat immediat" id="a">Achat immédiat
-                <input type="radio" name="type" value="Meilleure offre" id="m"> Meilleure offre</tr>
-
-            </div>
 
             
 
@@ -170,11 +164,8 @@
                 </div>
 
                 <div class="form-group">
-                <input type="radio" name="card" value="enchere">Ferraille
-                <input type="radio" name="card" value="Achat immédiat">Musée
-                <input type="radio" name="card" value="Meilleure offre"> VIP</tr>
+                    <input type="date" class="form-control" placeholder="Date de fin de la vente" name="datefin">
                 </div>
-
 
                 <div class="form-group">
                     <input type="number" class="form-control" placeholder="prix" name="prix">

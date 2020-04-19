@@ -18,7 +18,7 @@
         $categorie=$_POST['categorie'];
         $photo=$_FILES['photo']['name'];
         $photo2=$_FILES['photo2']['name'];
-        
+        $datefin=$_POST['datefin'];
 
         
         $upload="photos/".$photo;
@@ -30,9 +30,9 @@
         $typevente=$_POST['typevente'];
         
 
-        $query="INSERT INTO article (photo,photo2,id_vendeur,nom_article,description1,description2,categorie,prix,typevente)VALUES(?,?,?,?,?,?,?,?,?)";
+        $query="INSERT INTO article (photo,photo2,id_vendeur,nom_article,description1,description2,categorie,prix,typevente,datefin)VALUES(?,?,?,?,?,?,?,?,?,?)";
         $statement=$connexion->prepare($query);
-        $statement->bind_param("sssssssis",$photo,$photo2,$id_vendeur,$nom_article,$description1,$description2,$categorie,$prix,$typevente);
+        $statement->bind_param("sssssssiss",$photo,$photo2,$id_vendeur,$nom_article,$description1,$description2,$categorie,$prix,$typevente,$datefin);
         $result = $statement->execute();
         
 

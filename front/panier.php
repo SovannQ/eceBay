@@ -69,8 +69,8 @@
                                 <tr>
                                     <th scope="col"> </th>
                                     <th scope="col">Produit</th>
-                                    <th scope="col">ID article</th>
-                                    <th scope="col" class="text-right">Prix</th>
+                                    <th scope="col">Prix</th>
+                                    <th scope="col" class="text-right">Gérer</th>
                                     <th> </th>
                                 </tr>
                             </thead>                                
@@ -81,12 +81,19 @@
                                 $statement->execute();
                                 $result=$statement->get_result();
                             ?>
+                    
                             <tbody>
                                 <?php while($row=$result->fetch_assoc()){ ?>
                                     <tr class="product-content">
                                         <td><img class="img-fluid w-25" src="photos/<?= $row['photo'];?>" /> </td>
                                         <td><?= $row['nom_article'];?></td>
-                                        <td><?= $row['id_article'];?></td>
+                                        <td><?= $row['prix'];?></td>
+                                            <?php if($row['typevente'] == 'enchere') { ?>
+                                                        <td><form action="../back/enchere.php" method="post">
+                                                            <input type="text"  name="offre">
+                                                            <a href="panier.php?enchere=<?=$row['id_article']; ?>"><input  type="submit" value="encherir" name="enchere"></a>
+                                                        </form></td>                                            
+                                            <?php } ?>
                                         <form>
                                             <td class="text-right"><a href="panier.php?delete=<?=$row['id_article']; ?>" class="badge badge-danger">Supprimer</a></td>
                                         </form>
