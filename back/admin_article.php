@@ -1,5 +1,6 @@
 <?php
     include  'admin_crud_article.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +57,7 @@
 
         <div class="row">
             <div class="col pt-4">
-                <a href="admin_welcome.html"><button type="button" class="btn btn-secondary  btn-lg " name="b1">Retour menu</button></a> 
+                <a href="../front/admin_welcome.html"><button type="button" class="btn btn-secondary  btn-lg " name="b1">Retour menu</button></a> 
                 </div>
 
             <!-- Ajouter.modifier un article dans la table article-->
@@ -91,8 +92,29 @@
                 </div>
 
                 <div class="form-group">
+                <input type="radio" name="card" value="enchere">Ferraille
+                <input type="radio" name="card" value="Achat immédiat">Musée
+                <input type="radio" name="card" value="Meilleure offre"> VIP</tr>
+                </div>
+
+
+                <div class="form-group">
                     <input type="number" class="form-control" placeholder="prix" name="prix">
                 </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="typevente" name="typevente">
+                </div>
+
+                
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
+                        name="ajouter_acheteur">
+
+
+                </div>
+            </form>
 
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="typevente" name="typevente">
@@ -111,42 +133,51 @@
 
             <div class="col-md-6">
 
-                <?php
-                $query="SELECT * from article";
-                $statement=$connexion->prepare($query);
-                $statement->execute();
-                $result=$statement->get_result();
-                ?>
+            <?php
 
-                <h2 class="text-center">DB article</h2>
-                <table class="table table-striped ">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>Mail</th>
-                            <th>Mot de passe</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php while($row=$result->fetch_assoc()){ ?>
-                        <tr>
-                            <td><?= $row['id_article'];?></td>
-                            <td><?= $row['nom_article'];?></td>
-                            <td><?= $row['mail'];?></td>
-                            <td><?= $row['mdp'];?></td>
+$id_vendeur=$_SESSION['idvendeur'];
+$query="SELECT * from article";
+$statement=$connexion->prepare($query);
+$statement->execute();
+$result=$statement->get_result();
 
-                            <td>
-                                <a href="admin_article.php?edit=<?= $row['id_article']; ?>"
-                                    class="badge badge-primary">modifier</a>
-                                <a href="admin_crud_article.php?delete=<?=$row['id_article']; ?>"
-                                    class="badge badge-danger">Supprimer</a>
-                            </td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+?>
+
+
+
+<h2 class="text-center latable">Articles de la table "article"</h2>
+<table class="table">
+<thead>
+<tr>
+    <th>ID de l'article</th>
+    <th>Photo</th>
+    <th>Nom de l'article</th>
+    <th>Description</th>
+    <th>Catégorie</th>
+    <th>Prix</th>
+    <th>Type de vente</th>
+    <th>Action</th>
+</tr>
+</thead>
+<tbody>
+<?php while($row=$result->fetch_assoc()){ ?>
+<tr>
+    <td><?= $row['id_article'];?></td>
+    <td><img src="../front/photos/<?= $row['photo'];?>" width="35"></td>
+    <td><?= $row['nom_article'];?></td>
+    <td><?= $row['description1'];?></td>
+    <td><?= $row['categorie'];?></td>
+    <td><?= $row['prix'];?></td>
+    <td><?= $row['typevente'];?></td>
+
+    <td>
+        <a href="vendeur_crud.php?delete=<?=$row['id_article']; ?>"
+            class="badge badge-danger">Supprimer</a>
+    </td>
+</tr>
+<?php } ?>
+</tbody>
+</table>
             </div>
 
         </div>

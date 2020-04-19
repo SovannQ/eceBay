@@ -16,7 +16,8 @@
 
     //Traitement 
 
-   
+
+        
 
     if(isset($_POST['ajouterarticle'])){
         
@@ -26,12 +27,13 @@
         $categorie=$_POST['categorie'];
         $photo=$_FILES['photo']['name'];
         $photo2=$_FILES['photo2']['name'];
+        $id_vendeur='0';
         
 
         
-        $upload="photos/".$photo;
+        $upload="../front/photos/".$photo;
 
-        $id_admin='0';
+        $id_vendeur=$_SESSION['idvendeur'];
         
     
         $prix=$_POST['prix'];
@@ -40,29 +42,20 @@
 
         $query="INSERT INTO article (photo,photo2,id_vendeur,nom_article,description1,description2,categorie,prix,typevente)VALUES(?,?,?,?,?,?,?,?,?)";
         $statement=$connexion->prepare($query);
-        $statement->bind_param("ssissssis",$photo,$photo2,$id_admin,$nom_article,$description1,$description2,$categorie,$prix,$typevente);
+        $statement->bind_param("sssssssis",$photo,$photo2,$id_vendeur,$nom_article,$description1,$description2,$categorie,$prix,$typevente);
         $result = $statement->execute();
-        var_dump($result);
-        if ($result)
-        {
-
-        // Successful popup message, redirected back to view contacts
-        //echo "<script type='text/javascript'>alert('Successful - Record deleted!'); window.location.href = 'admin_article.php';</script>";
-        }
-        else
-        {
-        // Unsuccessful popup message, redirected back to view contacts
-        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_article.php';</script>";
-        }
+        
 
         move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
         move_uploaded_file($_FILES['photo2']['tmp_name'], $upload);
         header('location:admin_article.php');
 
+
         
         
 
     }
+
 
 
     if(isset($_GET['delete'])){

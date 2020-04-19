@@ -41,7 +41,6 @@
             {
 
                
-                
                 $query="SELECT id_vendeur FROM vendeur WHERE mail='$mail'";
 
                 $statement = $connexion->query($query);
