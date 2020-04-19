@@ -29,13 +29,27 @@ if(isset($_POST['enchere']))
     $id_acheteur=$_SESSION['idacheteur'];
     $offre=$_POST['offre'];
     $id_article=$_SESSION['poto'];
-    var_dump($id_article);
     
-    $query="INSERT INTO enchere(id_acheteur,offre)VALUES(?,?) WHERE id_article = '$id_article'";
-    $statement=$connexion->prepare($query);
-    $statement->bind_param("ss",$id_acheteur,$offre);
-    $result = $statement->execute();
 
+
+    $query="SELECT * FROM enchere WHERE id_article='$id_article'";
+    $statement2=$connexion->prepare($query);
+    $result2 = $statement2->execute();
+    $result2=$statement2->get_result(); 
+    $row=$result2->fetch_assoc();
+    if($row['id_article']='$id_article')
+    {
+        var_dump($id_article);
+        var_dump($offre);
+        var_dump($id_acheteur);
+        $queryy="UPDATE enchere SET id_acheteur=?,offre=?";
+        $statement=$connexion->prepare($queryy);
+        $statement->bind_param("ss",$id_acheteur,$offre);
+        $result = $statement->execute();
+    }
+    
+    
+    /*
     if($row)
     {
             $update="UPDATE enchere SET offre='$offre' WHERE id_acheteur='$id_acheteur' AND id_article= '$id_article'";
