@@ -37,7 +37,7 @@ if(isset($_POST['paiement'])){
     {
         //$sql="DELETE * from article WHERE id_acheteur='$id_acheteur'";
         //$statement = $connexion->query($sql);
-
+        
         //$sisi=$statement->fetch_assoc();
         //var_dump($row);
         echo "PAIEMENT VALIDE, BRAVO, VOUS ALLEZ RECEVOIR UN MAIL DE CONFIRMATION POUR VOTRE COMMANDE.";
@@ -57,6 +57,11 @@ if(isset($_POST['paiement'])){
             $mail->Password = 'sossovan123';
             $mail->setFrom('no-reply@ecebay.fr');
             $mail->Subject="Confirmation de commande #$rand";
+            $var=$_SESSION['idacheteur'];
+            $query="SELECT * from article WHERE id_acheteur = '$var' AND typevente = 'immediat'";
+            $statement=$connexion->prepare($query);
+            $statement->execute();
+            $result=$statement->get_result();
             $mail->Body="Bonjour,
             voici la confirmation de votre commande #$rand chez ECEBay. Nous vous en remercions. Voici le récapitulatif de la commande :
                 <html>
@@ -66,15 +71,14 @@ if(isset($_POST['paiement'])){
       <body>
        <p>Voici les anniversaires à venir au mois d\'Août !</p>
        <table>
-        <tr>
-         <th>Personne</th><th>Jour</th><th>Mois</th><th>Année</th>
-        </tr>
-        <tr>
-         <td>Josiane</td><td>3</td><td>Août</td><td>1970</td>
-        </tr>
-        <tr>
-         <td>Emma</td><td>26</td><td>Août</td><td>1973</td>
-        </tr>
+            <tr>
+            <th>Numéro de l'article</th><th>Article</th><th>Prix</th>
+            </tr>
+            while($row=$result->fetch_assoc()){ 
+                <tr>
+                <td><?= $row['id_article'];?></td><td><?= $row['id_article'];?></td><td><?= $row['prix'];?></td>
+                </tr>
+            }
        </table>
       </body>
      </html>";
