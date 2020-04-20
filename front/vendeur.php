@@ -72,12 +72,12 @@
 
         <!-- PHOTO DE PROFIL -->
         <!-- dans la bdd -->
-            <h3>
-                <center>Profil</center>
-                <br>
-            </h3>
+        <h3>
+            <center>Profil</center>
+            <br>
+        </h3>
         <div class="box">
-            
+
             <?php
 
                 $id_vendeur=$_SESSION['idvendeur'];
@@ -100,9 +100,9 @@
 
 
             <h4>Vendeur: <?= $_SESSION['nomvendeur'] ?><br>
-            Votre adresse mail : <?= $_SESSION['mail'] ?><br>
-            Votre n° d'identification vendeur : <?= $_SESSION['idvendeur'] ?></h4>
-            
+                Votre adresse mail : <?= $_SESSION['mail'] ?><br>
+                Votre n° d'identification vendeur : <?= $_SESSION['idvendeur'] ?></h4>
+
 
 
             <?php
@@ -123,55 +123,59 @@
             <?php } ?>
 
             <br>
-            
+
 
 
         </div>
 
         <form action="vendeur_crud.php" method="post" enctype="multipart/form-data"
-                class="d-flex justify-content-center">
+            class="d-flex justify-content-center">
 
-                <div class="form-group ">
-                    <input type="file" class="custom-file" name="photo">
-                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter une photo de profil"
-                        name="submitphoto">
-                </div>
+            <div class="form-group ">
+                <input type="file" class="custom-file" name="photo">
+                <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter une photo de profil"
+                    name="submitphoto">
+            </div>
 
-                <!-- background -->
-                <div class="form-group ">
-                    <input type="file" class="custom-file" name="bg">
-                
-                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter un fond d'écran"
-                        name="submitbg">
-                </div>
-                <!-- MARCHE PAS LE BACKGROUND BORDEL -->
+            <!-- background -->
+            <div class="form-group ">
+                <input type="file" class="custom-file" name="bg">
 
-            </form>
+                <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter un fond d'écran"
+                    name="submitbg">
+            </div>
+            <!-- MARCHE PAS LE BACKGROUND BORDEL -->
+
+        </form>
 
 
         <br>
         <!-- Ajouter.modifier un acheteur dans la table acheteur-->
 
         <div class="milieu">
-            
+
 
             <form action="vendeur_crud.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_acheteur" value="<?= $id_acheteur; ?>">
 
                 <table align=center>
-                
-                    <tr><td>
-                    <h2>Ajouter un article</h2></td></tr>
+
+                    <tr>
+                        <td>
+                            <h2>Ajouter un article</h2>
+                        </td>
+                    </tr>
 
                     <div class="form-group">
                         <tr>
-                       <td> <input type="radio" name="categorie" value="feraille" id="e">Ferraille ou trésor
-                        <input type="radio" name="categorie" value="musee" id="a">Bon pour le musée
-                        <input type="radio" name="categorie" value="vip" id="m"> Objet VIP</td></tr>
+                            <td> <input type="radio" name="categorie" value="feraille" id="e">Ferraille ou trésor
+                                <input type="radio" name="categorie" value="musee" id="a">Bon pour le musée
+                                <input type="radio" name="categorie" value="vip" id="m"> Objet VIP</td>
+                        </tr>
 
                     </div>
-                
-            </table>
+
+                </table>
 
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo">
@@ -180,7 +184,7 @@
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo2">
                 </div>
-           
+
 
 
                 <div class="form-group">
@@ -193,7 +197,7 @@
 
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Plus d'informations" name="description2">
-                    
+
                 </div>
 
 
@@ -308,8 +312,10 @@
                     <h6 class="text-uppercase font-weight-bold">Information additionnelle sur le site ECEbay</h6>
                     <p>
                         ECEbay, c'est quoi? C'est le projet ambitieux de 3 élèves de l'ECE Paris de réaliser un site
-                        d'enchère fonctionnel. Melant HTML, CSS, Bootstrap et MySql l'objectif était de faire un site fonctionnel.
-                        Venez découvrir notre sélection d'article qui ne vous laissera pas indiférant! Alors rejoins-nous
+                        d'enchère fonctionnel. Melant HTML, CSS, Bootstrap et MySql l'objectif était de faire un site
+                        fonctionnel.
+                        Venez découvrir notre sélection d'article qui ne vous laissera pas indiférant! Alors
+                        rejoins-nous
                     </p>
 
                 </div>
@@ -323,7 +329,7 @@
                     </p>
                 </div>
             </div>
-            <div class="footer-copyright text-center">&copy; 2020 Copyright | Droit d'auteur: Espada 
+            <div class="footer-copyright text-center">&copy; 2020 Copyright | Droit d'auteur: Espada
             </div>
     </footer>
 
