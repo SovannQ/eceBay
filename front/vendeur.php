@@ -257,6 +257,7 @@
                         <th>Prix</th>
                         <th>Type de vente</th>
                         <th>Action</th>
+                        <th>En ligne jusqu'à</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -269,6 +270,7 @@
                         <td><?= $row['categorie'];?></td>
                         <td><?= $row['prix'];?></td>
                         <td><?= $row['typevente'];?></td>
+                        <td><?= $row['datefin'];?></td>
 
                         <td>
                             <a href="vendeur_crud.php?delete=<?=$row['id_article']; ?>"
