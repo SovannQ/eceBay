@@ -92,9 +92,12 @@
                                         <td><?= $row['prix'];?></td>
                                             <?php if($row['typevente'] == 'enchere') { ?>
                                                         <td><form action="../back/enchere.php" method="post">
-                                                            <input type="text"  name="offre">
-                                                            <a href="panier.php?villa=<?= $row['id_article'];?>">Clique</a>
-                                                                <input  type="submit" value="encherir" name="enchere">
+                                                            <a href="../back/encherir.php?villa=<?= $row['id_article'];?>">Enchérir</a>
+                                                        </form></td>                        
+                                            <?php } ?>
+                                            <?php if($row['typevente'] == 'offre') { ?>
+                                                        <td><form action="../back/offre.php" method="post">
+                                                            <a href="../back/offrir.php?offre_acheteur=<?= $row['id_article'];?>">Faire une offre</a>
                                                         </form></td>                        
                                             <?php } ?>
                                         <form>

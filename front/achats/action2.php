@@ -39,6 +39,11 @@ include '../../front/vendeur_crud.php';
 
     if(isset($_POST['ajouter_au_panier'])){
 
+        
+
+        
+
+
         $id_panier=$_SESSION['idacheteur'];
         $id_article=$_SESSION['id_article'];
 
