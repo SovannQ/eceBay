@@ -23,6 +23,7 @@ include 'connecter.php';
 
         
         $upload="photos/".$photo;
+        $upload2="photos/".$photo2;
 
         $id_vendeur=$_SESSION['idvendeur'];
         
@@ -56,7 +57,7 @@ include 'connecter.php';
         }
 
         move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
-        move_uploaded_file($_FILES['photo2']['tmp_name'], $upload);
+        move_uploaded_file($_FILES['photo2']['tmp_name'], $upload2);
         header('location:vendeur.php');
 
 
@@ -132,7 +133,7 @@ include 'connecter.php';
         $upload="photos/".$bg;
         
         /////////////////////////////////////////////////////////////////////////// supprimer l'ancienne photo du dossier photos pour laisser place à la nouvelle
-        if($bg=NULL){
+        if($bg!=NULL){
 
         $delete="SELECT bg FROM vendeur WHERE id_vendeur='$id_vendeur'";
         $statement2=$connexion->prepare($delete);

@@ -59,7 +59,16 @@
 
                 <h2 class="text-center">Ajouter/modifier un article</h2>
                 <form action="admin_crud_article.php" method="post" enctype="multipart/form-data" class="milieu">
-                
+            
+                <div class="form-group">
+                        <tr>
+                            <td> <input type="radio" name="categorie" value="feraille" id="e">Ferraille ou trésor
+                                <input type="radio" name="categorie" value="musee" id="a">Bon pour le musée
+                                <input type="radio" name="categorie" value="vip" id="m"> Objet VIP</td>
+                        </tr>
+
+                    </div>
+
 
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo">
@@ -81,45 +90,31 @@
                     <input type="text" class="form-control" placeholder="Grande description" name="description2">
                 </div>
 
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Categorie" name="categorie">
-                </div>
-
-                <div class="form-group">
-                <input type="radio" name="card" value="enchere">Ferraille
-                <input type="radio" name="card" value="Achat immédiat">Musée
-                <input type="radio" name="card" value="Meilleure offre"> VIP</tr>
-                </div>
+                
 
 
                 <div class="form-group">
                     <input type="number" class="form-control" placeholder="prix" name="prix">
                 </div>
 
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="typevente" name="typevente">
+          <div class="form-group">
+                    <input type="radio" name="typevente" value="enchere">Enchère
+                    <input type="radio" name="typevente" value="immediat">Achat immédiat
+                    <input type="radio" name="typevente" value="offre">Meilleure offre
                 </div>
-
                 
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
-                        name="ajouter_acheteur">
+                        name="ajouteracheteur">
 
 
                 </div>
             </form>
 
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="typevente" name="typevente">
-                </div>
+                
 
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
-                        name="ajouterarticle">
-
-
-                </div>
+                
             </form>
             </div>
 
