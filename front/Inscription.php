@@ -21,33 +21,31 @@
 <body>
 
 
-  <!-- Menu -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">Menu</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active ml-5">
-          <a class="nav-link " href="accueil.php">| Accueil |<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link" href="achats/achats.php">| Achats |</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  mx-3" href="vendeur.php">| Vente |</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="Inscription.php">| Achats |</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link  mx-3" href="Inscription.php">| Vente |</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  ml-1" href="admin_welcome.html">| Admin |</a>
+          <a class="nav-link  ml-1" href="#">| Admin |</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  ml-1" href="panier.php">| Panier |</a>
+          <a class="nav-link  ml-1" href="Inscription.php">| Panier |</a>
         </li>
-      </ul>
-  </nav>
+    </ul>
+    <a href="../Inscription.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
+
+</nav>
 
   <!-- FORM  -->
 

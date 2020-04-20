@@ -17,39 +17,31 @@
 </head>
 
 <body>
-    <!-- NAVBAR -->
+    <!-- Menu -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
-        <a class="navbar-brand" href="#">Menu</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active ml-5">
-              <a class="nav-link " href="../front/accueil.php">| Accueil |<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="../front/achats/achats.php">| Achats |</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="../front/Inscription.html">| Catégories |</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link  mx-3" href="#">| Vente |</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link  ml-1" href="../front/panier.php">| Panier |</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link  ml-1" href="admin_welcome.html">| Admin |</a>
-              </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-          </form>
-      </nav>
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="../front/Inscription.php">| Achats |</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link  mx-3" href="../front/Inscription.php">| Vente |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  ml-1" href="../front/admin_welcome.html">| Admin |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  ml-1" href="../front/Inscription.php">| Panier |</a>
+        </li>
+    </ul>
+    <a href="../front/Inscription.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
+
+</nav>
 
     <!-- acheteur-->
     <div class="container-fluid">

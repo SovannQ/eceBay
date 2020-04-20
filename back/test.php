@@ -9,8 +9,8 @@ $mail->SMTPSecure='ssl';
 $mail->Host ='smtp.gmail.com';
 $mail->Port = '465';
 $mail->isHTML();
-$mail->Username ='sovannquaglieri@gmail.com';
-$mail->Password = 'sossovan123';
+$mail->Username ='ecebay.mail@gmail.com';
+$mail->Password = 'ecebay123';
 $mail->setFrom('no-reply@ecebay.fr');
 $mail->Subject="Confirmation de commande #$rand";
 $mail->Body="Bonjour,

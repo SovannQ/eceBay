@@ -35,7 +35,10 @@
                     <a class="nav-link " href="index2.html">| Accueil |<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item mx-3">
-                    <a class="nav-link" href="../front/achats/achats.php">| Achats |</a>
+                    <a class="nav-link" href="achats/achats.php">| Achats |</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">| Catégories |</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled mx-3" href="#">| Vente |</a>
@@ -134,7 +137,6 @@
                         name="submitphoto">
                 </div>
 
-
                 <!-- background -->
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="bg">
@@ -143,7 +145,6 @@
                         name="submitbg">
                 </div>
                 <!-- MARCHE PAS LE BACKGROUND BORDEL -->
-
 
             </form>
 
@@ -179,6 +180,7 @@
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo2">
                 </div>
+           
 
 
                 <div class="form-group">
@@ -205,7 +207,6 @@
                 <div class="form-group">
                     <input type="number" class="form-control" placeholder="prix" name="prix">
                 </div>
-
 
 
 
