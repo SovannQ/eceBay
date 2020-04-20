@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+include 'connecter.php';
     ////////////////////////////////////////////////////////
     // connexion à la DB (autre approche que le cours, plus simple)
     $connexion = new mysqli("localhost", "root","","ecebay");
@@ -56,7 +57,7 @@
 
         move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
         move_uploaded_file($_FILES['photo2']['tmp_name'], $upload);
-        //header('location:vendeur.php');
+        header('location:vendeur.php');
 
 
         

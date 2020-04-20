@@ -1,5 +1,7 @@
 <?php
-    include '../back/enchere.php'
+    include '../back/enchere.php';
+    include '../front/achats/action2.php';
+    include '../front/achats/action.php';
 ?>
 
 <!DOCTYPE html>

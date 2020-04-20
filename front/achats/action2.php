@@ -1,5 +1,5 @@
 <?php
-    session_start();
+include '../../front/vendeur_crud.php';
     ////////////////////////////////////////////////////////
     // connexion à la DB (autre approche que le cours, plus simple)
     $connexion = new mysqli("localhost", "root","","ecebay");

@@ -1,5 +1,5 @@
-<?php session_start();
-
+<?php 
+include '../front/vendeur_crud.php';
 ////////////////////////////////////////////////////////
     // connexion à la DB (autre approche que le cours, plus simple)
     $connexion = new mysqli("localhost", "root","","ecebay");
@@ -9,6 +9,7 @@
     }
 
 ////////////////////////////////////////////////////////
+
 if(isset($_GET['villa'])){
     $id_article=$_GET['villa'];
     $query="SELECT * FROM article WHERE id_article=? ";
@@ -19,7 +20,6 @@ if(isset($_GET['villa'])){
     $row=$result->fetch_assoc();
 
     $vid_article=$row['id_article'];
-    var_dump($vid_article);
     $_SESSION['poto']=$vid_article;
 }
 
@@ -29,24 +29,29 @@ if(isset($_POST['enchere']))
     $id_acheteur=$_SESSION['idacheteur'];
     $offre=$_POST['offre'];
     $id_article=$_SESSION['poto'];
-    
 
-
-    $query="SELECT * FROM enchere WHERE id_article='$id_article'";
+    $query="SELECT * FROM enchere WHERE id_article = '$id_article'";
     $statement2=$connexion->prepare($query);
     $result2 = $statement2->execute();
     $result2=$statement2->get_result(); 
     $row=$result2->fetch_assoc();
-    if($row['id_article']='$id_article')
+    var_dump($id_article);
+    var_dump($offre);
+    var_dump($id_acheteur);
+    var_dump($row['id_article']);
+    if($row['id_article']==$id_article)
     {
         var_dump($id_article);
         var_dump($offre);
         var_dump($id_acheteur);
-        $queryy="UPDATE enchere SET id_acheteur=?,offre=?";
+        var_dump($row['id_article']);
+        $queryy="UPDATE enchere SET id_acheteur=?,offre=? WHERE id_article = '$id_article'";
         $statement=$connexion->prepare($queryy);
         $statement->bind_param("ss",$id_acheteur,$offre);
         $result = $statement->execute();
     }
+        
+    
     
     
     /*
