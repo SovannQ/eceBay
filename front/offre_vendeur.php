@@ -1,5 +1,5 @@
 <?php
-    include '../back/offre.php';
+    include 'offre_vendeur_crud.php';
     include '../front/achats/action2.php';
     include '../front/achats/action.php';
 ?>
@@ -58,27 +58,29 @@
           </nav>
 
             <div class="form-group">       
-                    <form action="../back/offre.php" method="post">
+                    <form action="offre_vendeur_crud.php" method="post">
                         <input type="text"  name="offre">
                         <input  type="submit" value="Faire une offre" name="bouton">
-                    </form>  
-                    <div>
-                        Offre du vendeur:
-                        <?php 
-                            $var = $_SESSION['pablo'];
-                            $query="SELECT prix from article WHERE id_article='$var'";
-                            $statement2=$connexion->prepare($query);
-                            $result2 = $statement2->execute();
-                            $result2=$statement2->get_result(); 
-                            $row=$result2->fetch_assoc();
-                            echo $row['prix'];
-                        ?>
-                        euros
-                    </div>   
-                    <form action="offre.php" method="post">
-                        <input  type="submit" value="Accepter l'offre" name="boutton">
-                    </form>                  
+                    </form>
             </div>
+            <div>
+                Offre de l'acheteur:
+                <?php 
+                    $var = $_SESSION['pablo'];
+                    $query="SELECT offre from article WHERE id_article='$var'";
+                    $statement2=$connexion->prepare($query);
+                    $result2 = $statement2->execute();
+                    $result2=$statement2->get_result(); 
+                    $row=$result2->fetch_assoc();
+
+                    echo $row['offre'];
+                ?>
+                euros
+            </div>
+            <form action="offre_vendeur_crud.php" method="post">
+                <input  type="submit" value="Accepter l'offre" name="boutton">
+            </form>
+            
 
     <!-- pied de page -->
     <footer class="page-footer">

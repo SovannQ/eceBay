@@ -2,7 +2,7 @@
 include 'connecter.php';
     ////////////////////////////////////////////////////////
     // connexion à la DB (autre approche que le cours, plus simple)
-    $connexion = new mysqli("localhost", "root","rien","ecebay");
+    $connexion = new mysqli("localhost", "root","","ecebay");
 
     if($connexion->connect_error){
         die("Erreur de connexion.".$connexion->connect_error);
@@ -132,7 +132,7 @@ include 'connecter.php';
         $upload="photos/".$bg;
         
         /////////////////////////////////////////////////////////////////////////// supprimer l'ancienne photo du dossier photos pour laisser place à la nouvelle
-        if($bg=NULL){
+        if($bg!=NULL){
 
         $delete="SELECT bg FROM vendeur WHERE id_vendeur='$id_vendeur'";
         $statement2=$connexion->prepare($delete);

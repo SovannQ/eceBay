@@ -42,13 +42,13 @@
               <a class="nav-link" href="../achats.php">| Achats |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  mx-3" href="../../vendeur.php">| Vente |</a>
+                <a class="nav-link  mx-3" href="../../Inscription.php">| Vente |</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  ml-1" href="../../panier.php">| Panier |</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  ml-1" href="../../admin_welcome.html">| Admin |</a>
+                <a class="nav-link  ml-1" href="../../Inscription.php">| Admin |</a>
               </li>
           </ul>
         </div>

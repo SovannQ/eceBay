@@ -208,13 +208,15 @@
                     <input type="number" class="form-control" placeholder="prix" name="prix">
                 </div>
 
+                <div class="form-group">
+                    <input type="date" class="form-control" placeholder="date" name="datefin">
+                </div>
+
 
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
                         name="ajouterarticle">
-
-
                 </div>
             </form>
 
@@ -257,8 +259,8 @@
                         <th>Catégorie</th>
                         <th>Prix</th>
                         <th>Type de vente</th>
-                        <th>Action</th>
                         <th>En ligne jusqu'à</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -270,7 +272,17 @@
                         <td><?= $row['description1'];?></td>
                         <td><?= $row['categorie'];?></td>
                         <td><?= $row['prix'];?></td>
-                        <td><?= $row['typevente'];?></td>
+                    
+                            <td>
+                            <?php if($row['typevente'] == 'offre') { ?>
+                                <a href="offre_vendeur.php?offre_vendeur=<?= $row['id_article'];?>">
+                                    <?= $row['typevente'];?>
+                                </a>                     
+                            <?php } ?>
+                            <?php if($row['typevente'] != 'offre') { ?>
+                                    <?= $row['typevente'];?>
+                            <?php } ?>  
+                            </td>
                         <td><?= $row['datefin'];?></td>
 
                         <td>
