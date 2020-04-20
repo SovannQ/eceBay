@@ -118,7 +118,7 @@
 
                ///////////////////////////////////////////////// INSERER l'adresse dans la table adresse, avec le dernier ID inséré dans la première table
 
-               $query_test1= " INSERT INTO `adresse` (`id_adresse`, `nom`, `rue`, `ville`, `code`, `pays`) VALUES (LAST_INSERT_ID(), '$nom_livraison', '$rue', '$ville', '$code_postal', '$pays')";
+               $query_test1= " INSERT INTO adresse (id_adresse, nom, rue, ville, code, pays) VALUES (LAST_INSERT_ID(), '$nom_livraison', '$rue', '$ville', '$code_postal', '$pays')";
                $statement=$connexion->prepare($query_test1);
           
                $result = $statement->execute();
