@@ -23,6 +23,9 @@ include 'connecter.php';
 
         
         $upload="photos/".$photo;
+        $upload2="photos/".$photo2;
+
+        
 
         $id_vendeur=$_SESSION['idvendeur'];
         
@@ -56,7 +59,7 @@ include 'connecter.php';
         }
 
         move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
-        move_uploaded_file($_FILES['photo2']['tmp_name'], $upload);
+        move_uploaded_file($_FILES['photo2']['tmp_name'], $upload2);
         header('location:vendeur.php');
 
 
