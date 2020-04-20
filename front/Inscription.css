@@ -1,70 +1,83 @@
 .btn {
-    border: 2px solid black;
-    background-color: white;
-    color: black;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  .inscription {
-    background-color: white;
-    border: none;
-    color: #85c8e2;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px 5px 5px 5px;
-    }
+.inscription {
+  background-color: white;
+  border: none;
+  color: #85c8e2;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px 5px 5px 5px;
+}
 
-    .ecriture {
-        color: #85c8e2; 
-        text-align: center;
-        align-items: center;
-        align-content: center;
-        align-self: center;
-    }
-    .soumettre {
-        background-color: white;
-        border: none;
-        color: #85c8e2;
-        padding: 5px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px 5px 5px 5px;
-      
-        }
+.ecriture {
+  color: #85c8e2;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
 
-        textarea{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.soumettre {
+  background-color: white;
+  border: none;
+  color: #85c8e2;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px 5px 5px 5px;
 
-        .titre {
-            font-size: x-large;
-            font-weight: 500;
-            text-align: center;
-            margin-top: auto;
-            margin-bottom: auto;
-            color: #85c8e2;
-          }
-       
-          .grandtitre {
-            font-size: x-large;
-            font-weight: 500;
-            text-align: center;
-            margin-top: auto;
-            margin-bottom: auto;
-            
-          }
-        
+}
 
+textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titre {
+  font-size: x-large;
+  font-weight: 500;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #85c8e2;
+}
+
+.grandtitre {
+  font-size: x-large;
+  font-weight: 500;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+
+.page-footer {
+  background-color:whitesmoke;
+  color:black;
+  font-family: 'Open Sans', sans-serif;
+  padding: 60px 0 30px;
+  font-size: 15px;
+ }
+ .footer-copyright {
+ color: #85c8e2;
+  padding: 40px 0;
+  
+ }

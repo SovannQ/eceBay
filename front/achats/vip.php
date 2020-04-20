@@ -30,7 +30,7 @@
 
     
     <!-- Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@
             <a href="panier.html"><img class="panier col-lg-1" src="panier.jpg"></a>
             <a href="Inscription.html"><img class="panier col-lg-1" src="connexion.jpg"></a>
             <img class="lgo col-lg-1" src="lgo.jpg">
-            <a href="achats.php"><h1 class="titre">Toutes catégories</h1></a>
+            <a href="achats.php"><h1>Catalogue ECEbay</h1></a>
         </div>
     </header>
 
@@ -78,13 +78,13 @@
             <ul class="nav flex-column">
             <hr color="black">
             <li class="nav-item selectionne">
-            <hr color="black"><a class="nav-link" href="feraille.php">Féraille ou Trésor</a><hr color="black">
+                <hr color="#e67e22"> <a class="nav-link" href="feraille.php">Féraille ou Trésor</a><hr color="#e67e22">
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="musee.php">Bon pour le musée</a><hr color="black">
+                <a class="nav-link" href="musee.php">Bon pour le musée</a><hr color="#e67e22">
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="vip.php">Accessoire VIP</a><hr color="black">
+                <a class="nav-link" href="vip.php">Accessoire VIP</a><hr color="#e67e22">
             </li>
             </ul>
         </div>
@@ -96,11 +96,11 @@
                 Type de vente
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="filtre/vip_enchere.php">Enchères</a>
-                <a class="dropdown-item" href="filtre/vip_offre.php">Plus offrand</a>
-                <a class="dropdown-item" href="filtre/vip_immediat.php">Achat immédiat</a>
+                <a class="dropdown-item ddown" href="filtre/vip_enchere.php">Enchères</a>
+                <a class="dropdown-item ddown" href="filtre/vip_offre.php">Plus offrand</a>
+                <a class="dropdown-item ddown" href="filtre/vip_immediat.php">Achat immédiat</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Tout type de vente</a>
+                <a class="dropdown-item ddown" href="achats.php">Tout type de vente</a>
             </div>
         </div>
 <!-- ARTICLES -->
@@ -126,7 +126,7 @@
                     </div>
                     <div class="product-content">
                         <h3 class="title"><a href="#"><?= $row['nom_article'];?>  |  <?= $row['typevente'];?>  |  <?= $row['categorie'];?></a></h3>
-                        <p><?= $row['description'];?></p>
+                        <p><?= $row['description1'];?></p>
                         <div class="price">
                         <?= $row['prix'];?> euros
                         </div>

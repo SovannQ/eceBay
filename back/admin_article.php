@@ -19,7 +19,7 @@
 
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -171,7 +171,7 @@ $result=$statement->get_result();
     <td><?= $row['typevente'];?></td>
 
     <td>
-        <a href="vendeur_crud.php?delete=<?=$row['id_article']; ?>"
+        <a href="admin_crud_article.php?delete=<?=$row['id_article']; ?>"
             class="badge badge-danger">Supprimer</a>
     </td>
 </tr>

@@ -1,13 +1,50 @@
 .jolie {
     font-family: 'Open Sans', sans-serif;
+    color: black;
     
 }
 
+ h3{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 40px;}
+
+    h2{
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        text-decoration: underline;
+        font-size: 30px;}
+
+  h4{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+    }
+        
+
+    
+
 .milieu{
+    
     margin-left: 300px;
     margin-right: 300px;
+    align-self: center;
 }
+
+
 
 .container-fluid{
     background-color:rgb(255,255,255,0.8);
 }
+
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+    
+textarea {
+    
+    box-sizing: border-box;
+    

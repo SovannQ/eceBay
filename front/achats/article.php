@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="article.css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script type="text/javascript">
             $(document).ready(function () {
                 $('.header').height($(window).height());
@@ -24,10 +25,10 @@
     </head>
 
 
-<body style="background-color: grey">
+<body style="background-color: whitesmoke">
 
     <!-- Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: whitesmoke">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -59,9 +60,10 @@
 
     <div class="row">
 
-      <div class="col-lg-3">
-        <h1 class="my-4">ECEbay</h1>
-      </div>
+      
+      <a href="achats.php"><h1>Catalogue ECEbay</h1></a>
+      
+
       <div class="card mt-4 l">
         <div class="row">
             <!-- Carousel -->
@@ -98,7 +100,10 @@
                       <h5>Type de vente: <?= $vtype;?></h5>
                     </li>
                     <li>
-                      <h6 class="card-text">Description: <?= $vdescription;?></h6>
+                      <h6 class="card-text">Description courte: <?= $row['description1'];?></h6>
+                    </li>
+                    <li>
+                      <h7 class="card-text">Plus d'info: <?= $row['description1'];?></h7>
                     </li>
                     <li>
                       <p class="card-text">Catégorie: <?= $vcategorie;?></p>
@@ -110,8 +115,8 @@
                      $_SESSION['vprix']=$vprix;
                   ?>
                   <form action="action2.php" method="post">
-                  <input type="submit" class="btn btn-outline-success" name="ajouter_au_panier" value="Ajouter au panier">
-                  <a href="../panier.php"><button type="button" class="btn btn-success">Voir panier</button></a>
+                  <input type="submit" class=" soumettre" name="ajouter_au_panier" value="Ajouter au panier"><br>
+                  <a href="../panier.php"><button type="button" class="btn soumettre">Voir panier</button></a>
                   </form>
                   </ul>
                 </div>
@@ -131,30 +136,30 @@
 
   <!-- pied de page -->
   <footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12">
-                <h6 class="text-uppercase font-weight-bold">Information additionnelle sur le Bankai</h6>
-                <p>
-                    Bankai (解, Libération finale , ou Libération complète ) est la forme finale et complète du
-                    Zanpakutō, c'est l'aboutissement de son entraînement en matière de communication pour le
-                    Shinigami.
-                </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <h6 class="text-uppercase font-weight-bold">Information additionnelle sur le site ECEbay</h6>
+                    <p>
+                        ECEbay, c'est quoi? C'est le projet ambitieux de 3 élèves de l'ECE Paris de réaliser un site
+                        d'enchère fonctionnel. Melant HTML, CSS, Bootstrap et MySql l'objectif était de faire un site fonctionnel.
+                        Venez découvrir notre sélection d'article qui ne vous laissera pas indiférant! Alors rejoins-nous
+                    </p>
 
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <p>
+                        37, quai de Grenelle, 75015 Paris, France <br>
+                        ecebay.mail@gmail.com <br>
+                        +33 06 45 75 92 06 <br>
+                        +33 07 37 38 91 04 <br>
+                    </p>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                <p>
-                    37, quai de Grenelle, 75015 Paris, France <br>
-                    gso@gmail.com <br>
-                    +33 01 02 03 04 05 <br>
-                    +33 01 03 02 05 04
-                </p>
+            <div class="footer-copyright text-center">&copy; 2020 Copyright | Droit d'auteur: Espada 
             </div>
-        </div>
-        <div class="footer-copyright text-center">&copy; 2020 Copyright | Droit d'auteur: Espada 
-        </div>
-</footer>
+    </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

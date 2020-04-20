@@ -1,7 +1,6 @@
 body {
 	padding: 0px;
 	margin: 0px;
-	background-color: darkslategray;
 	background-color:white;
 	background-image:url(salon.jpg); 
 	background-repeat: no-repeat;
@@ -46,6 +45,7 @@ ul{
 
 .carousel{
 	width: 25%;
+	
 	margin-left: 55%;
 	margin-right: auto;
 	margin-top: 11%;
@@ -55,7 +55,6 @@ ul{
 
 h1{
 	font-size: 400%;
-	
 	font-family: 'Open Sans', sans-serif;
 
 	

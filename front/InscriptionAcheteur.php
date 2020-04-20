@@ -174,14 +174,39 @@ Si le vendeur tarde trop à récupérer les marchandises refusées par l'acheteu
             </div>
 
         </div>
-
-        <input type="submit" name="inscription_acheteur" value="S'inscrire" id="inscription">
+        <br>
+        <input type="submit" name="inscription" value="S'inscrire" id="inscription" class="soumettre">
+<br><br>
 
 
     </form>
     <!--  <form action="TraitementInscription.php" method="post"> -->
 
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <h6 class="text-uppercase font-weight-bold">Information additionnelle sur le site ECEbay</h6>
+                    <p>
+                        ECEbay, c'est quoi? C'est le projet ambitieux de 3 élèves de l'ECE Paris de réaliser un site
+                        d'enchère fonctionnel. Melant HTML, CSS, Bootstrap et MySql l'objectif était de faire un site fonctionnel.
+                        Venez découvrir notre sélection d'article qui ne vous laissera pas indiférant! Alors rejoins-nous
+                    </p>
 
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <p>
+                        37, quai de Grenelle, 75015 Paris, France <br>
+                        ecebay.mail@gmail.com <br>
+                        +33 06 45 75 92 06 <br>
+                        +33 07 37 38 91 04 <br>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-copyright text-center">&copy; 2020 Copyright | Droit d'auteur: Espada 
+            </div>
+    </footer>
 
 
 

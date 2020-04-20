@@ -32,7 +32,7 @@
 
     
     <!-- Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: whitesmoke">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -60,11 +60,12 @@
       </nav>
 
       <header>
+       <br>   
         <div>
             <a href="../panier.php"><img class="panier col-lg-1" src="panier.jpg"></a>
             <a href="Inscription.html"><img class="panier col-lg-1" src="connexion.jpg"></a>
             <img class="lgo col-lg-1" src="lgo.jpg">
-            <a href="#"><h1>Toutes catégories</h1></a>
+            <a href="achats.php"><h1>Catalogue ECEbay</h1></a>
         </div>
     </header>
 
@@ -77,24 +78,26 @@
             <hr color="black">
             <hr color="black">  
             <li class="nav-item selectionne">
-                <hr color="black"> <a class="nav-link" href="feraille.php">Féraille ou Trésor</a><hr color="black">
+                <hr color="#e67e22"> <a class="nav-link" href="feraille.php">Féraille ou Trésor</a><hr color="#e67e22">
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="musee.php">Bon pour le musée</a><hr color="black">
+                <a class="nav-link" href="musee.php">Bon pour le musée</a><hr color="#e67e22">
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="vip.php">Accessoire VIP</a><hr color="black">
+                <a class="nav-link" href="vip.php">Accessoire VIP</a><hr color="#e67e22">
             </li>
             </ul>
         </div>
         <div class="dropdown ">
-            <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Type de vente
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="filtre/tout_enchere.php">Enchères</a>
-                <a class="dropdown-item" href="filtre/tout_offre.php">Plus offrand</a>
-                <a class="dropdown-item" href="filtre/tout_immediat.php">Achat immédiat</a>
+                <a class="dropdown-item ddown" href="filtre/tout_enchere.php">Enchères</a>
+                <a class="dropdown-item ddown" href="filtre/tout_offre.php">Plus offrand</a>
+                <a class="dropdown-item ddown" href="filtre/tout_immediat.php">Achat immédiat</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item  ddown" href="achats.php">Tout type de vente</a>
             </div>
         </div>
 <!-- TITRE -->
@@ -140,11 +143,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12">
-                    <h6 class="text-uppercase font-weight-bold">Information additionnelle sur le Bankai</h6>
+                    <h6 class="text-uppercase font-weight-bold">Information additionnelle sur le site ECEbay</h6>
                     <p>
-                        Bankai (解, Libération finale , ou Libération complète ) est la forme finale et complète du
-                        Zanpakutō, c'est l'aboutissement de son entraînement en matière de communication pour le
-                        Shinigami.
+                        ECEbay, c'est quoi? C'est le projet ambitieux de 3 élèves de l'ECE Paris de réaliser un site
+                        d'enchère fonctionnel. Melant HTML, CSS, Bootstrap et MySql l'objectif était de faire un site fonctionnel.
+                        Venez découvrir notre sélection d'article qui ne vous laissera pas indiférant! Alors rejoins-nous
                     </p>
 
                 </div>
@@ -152,16 +155,15 @@
                     <h6 class="text-uppercase font-weight-bold">Contact</h6>
                     <p>
                         37, quai de Grenelle, 75015 Paris, France <br>
-                        gso@gmail.com <br>
-                        +33 01 02 03 04 05 <br>
-                        +33 01 03 02 05 04
+                        ecebay.mail@gmail.com <br>
+                        +33 06 45 75 92 06 <br>
+                        +33 07 37 38 91 04 <br>
                     </p>
                 </div>
             </div>
             <div class="footer-copyright text-center">&copy; 2020 Copyright | Droit d'auteur: Espada 
             </div>
     </footer>
-
 
 
 </body>
