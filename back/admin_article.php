@@ -18,8 +18,10 @@
 </head>
 
 <body>
+    <!-- NAVBAR -->
+
     <!-- Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
+    <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Menu</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -55,9 +57,9 @@
             <!-- Ajouter.modifier un article dans la table article-->
             <div class="col-md-4">
 
-                <h2 class="text-center">Ajouter un article</h2>
-                <form action="admin_crud_acheteur.php" method="post" enctype="multipart/form-data">
-              
+                <h2 class="text-center">Ajouter/modifier un article</h2>
+                <form action="admin_crud_article.php" method="post" enctype="multipart/form-data" class="milieu">
+                
 
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo">
@@ -108,6 +110,17 @@
                 </div>
             </form>
 
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="typevente" name="typevente">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
+                        name="ajouterarticle">
+
+
+                </div>
+            </form>
             </div>
 
             <!-- DB article -->
@@ -152,7 +165,7 @@ $result=$statement->get_result();
     <td><?= $row['typevente'];?></td>
 
     <td>
-        <a href="vendeur_crud.php?delete=<?=$row['id_article']; ?>"
+        <a href="admin_crud_article.php?delete=<?=$row['id_article']; ?>"
             class="badge badge-danger">Supprimer</a>
     </td>
 </tr>

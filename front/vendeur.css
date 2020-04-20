@@ -4,13 +4,19 @@
     
 }
 
-.jolie h2{
+ h3{
     font-family: 'Open Sans', sans-serif;
-    color:#85c8e2;
+    text-align: center;
     text-decoration: underline;
     font-size: 40px;}
 
-    .jolie h4{
+    h2{
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        text-decoration: underline;
+        font-size: 30px;}
+
+  h4{
         font-family: 'Open Sans', sans-serif;
         font-size: 20px;
     }
@@ -25,6 +31,20 @@
     align-self: center;
 }
 
+
+
 .container-fluid{
     background-color:rgb(255,255,255,0.8);
 }
+
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+    
+textarea {
+    
+    box-sizing: border-box;}
+    

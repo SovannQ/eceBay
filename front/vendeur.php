@@ -17,16 +17,16 @@
 
     <title>VENDEUR</title>
 
-   
+
 </head>
 
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light jolie" style="background-color: white">
+    <nav class="navbar navbar-expand-lg navbar-light jolie" tyle="background-color: whitesmoke">
         <a class="navbar-brand" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -72,11 +72,12 @@
 
         <!-- PHOTO DE PROFIL -->
         <!-- dans la bdd -->
-        <div class="col-md-12 jolie">
-            <h2>
+            <h3>
                 <center>Profil</center>
                 <br>
-            </h2>
+            </h3>
+        <div class="box">
+            
             <?php
 
                 $id_vendeur=$_SESSION['idvendeur'];
@@ -89,18 +90,19 @@
             ?>
 
             <?php  if($row){ ?>
-                <style>
-                    body{
-                         background-image: url("photos/<?= $row['bg']; ?>"); 
-                        }
-                </style>
-            
+            <style>
+                body {
+                    background-image: url("photos/<?= $row['bg']; ?>");
+                }
+            </style>
+
             <?php } ?>
 
+
+            <h4>Vendeur: <?= $_SESSION['nomvendeur'] ?><br>
+            Votre adresse mail : <?= $_SESSION['mail'] ?><br>
+            Votre n° d'identification vendeur : <?= $_SESSION['idvendeur'] ?></h4>
             
-        <h4>Vendeur: <?= $_SESSION['nomvendeur'] ?></h4>
-        <h4>Votre adresse mail : <?= $_SESSION['mail'] ?></h4>
-        <h4>Votre n° d'identification vendeur : <?= $_SESSION['idvendeur'] ?></h4>
 
 
             <?php
@@ -115,62 +117,61 @@
             ?>
 
             <?php  if($row){ ?>
-            
-                <center><img src="photos/<?= $row['photo'];?>" width="200px" height="200px"></center>
-            
+
+            <img src="photos/<?= $row['photo'];?>" width="200px" height="200px"></<img>
+
             <?php } ?>
 
             <br>
-            <form action="vendeur_crud.php" method="post" enctype="multipart/form-data"
+            
+
+
+        </div>
+
+        <form action="vendeur_crud.php" method="post" enctype="multipart/form-data"
                 class="d-flex justify-content-center">
 
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo">
-                </div>
-                <div class="form-group ">
-                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter une photo de profil" name="submitphoto">
+                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter une photo de profil"
+                        name="submitphoto">
                 </div>
 
-                
                 <!-- background -->
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="bg">
-                </div>
-
-                <div class="form-group ">
-                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter un fond d'écran" name="submitbg">
+                
+                    <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter un fond d'écran"
+                        name="submitbg">
                 </div>
                 <!-- MARCHE PAS LE BACKGROUND BORDEL -->
-                
 
             </form>
 
-            
-        </div>
 
-        
-            <br>
+        <br>
         <!-- Ajouter.modifier un acheteur dans la table acheteur-->
 
         <div class="milieu">
-             <table align=center>
-                 <td>
-            <h2>Ajouter un article</h2>
-
-            <div class="form-group">
-                <input type="radio" name="type" value="enchere" id="e">Enchère
-                <input type="radio" name="type" value="Achat immediat" id="a">Achat immédiat
-                <input type="radio" name="type" value="Meilleure offre" id="m"> Meilleure offre</tr>
-
-            </div> </td>
-            </table>
-
             
-
-
 
             <form action="vendeur_crud.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_acheteur" value="<?= $id_acheteur; ?>">
+
+                <table align=center>
+                
+                    <tr><td>
+                    <h2>Ajouter un article</h2></td></tr>
+
+                    <div class="form-group">
+                        <tr>
+                       <td> <input type="radio" name="categorie" value="feraille" id="e">Ferraille ou trésor
+                        <input type="radio" name="categorie" value="musee" id="a">Bon pour le musée
+                        <input type="radio" name="categorie" value="vip" id="m"> Objet VIP</td></tr>
+
+                    </div>
+                
+            </table>
 
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo">
@@ -181,6 +182,7 @@
                 </div>
            
 
+
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Nom de l'article" name="nom_article">
                 </div>
@@ -190,17 +192,15 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Grande description" name="description2">
+                    <input type="text" class="form-control" placeholder="Plus d'informations" name="description2">
+                    
                 </div>
 
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Categorie" name="categorie">
-                </div>
 
                 <div class="form-group">
-                <input type="radio" name="card" value="enchere">Ferraille
-                <input type="radio" name="card" value="Achat immédiat">Musée
-                <input type="radio" name="card" value="Meilleure offre"> VIP</tr>
+                    <input type="radio" name="typevente" value="enchere">Enchère
+                    <input type="radio" name="typevente" value="immediat">Achat immédiat
+                    <input type="radio" name="typevente" value="offre">Meilleure offre
                 </div>
 
 
@@ -208,13 +208,7 @@
                     <input type="number" class="form-control" placeholder="prix" name="prix">
                 </div>
 
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="typevente" name="typevente">
-                </div>
 
-                <div class="form-group">
-                    <input type="date" class="form-control" placeholder="Date de fin de la vente" name="datefin">
-                </div>
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
@@ -223,24 +217,24 @@
 
                 </div>
             </form>
-            
 
-            
-            
+
+
+
 
         </div>
-        
-    
 
 
 
 
 
-    <!-- DB acheteur -->
 
-    <div class="col-md-12 jolie">
 
-        <?php
+        <!-- DB acheteur -->
+
+        <div class="col-md-12 jolie">
+
+            <?php
 
                 $id_vendeur=$_SESSION['idvendeur'];
                 $query="SELECT * from article WHERE id_vendeur='$id_vendeur'";
@@ -252,47 +246,74 @@
 
 
 
-        <h2 class="text-center latable">Vos articles</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID de l'article</th>
-                    <th>Photo</th>
-                    <th>Nom de l'article</th>
-                    <th>Description</th>
-                    <th>Catégorie</th>
-                    <th>Prix</th>
-                    <th>Type de vente</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($row=$result->fetch_assoc()){ ?>
-                <tr>
-                    <td><?= $row['id_article'];?></td>
-                    <td><img src="photos/<?= $row['photo'];?>" width="35"></td>
-                    <td><?= $row['nom_article'];?></td>
-                    <td><?= $row['description1'];?></td>
-                    <td><?= $row['categorie'];?></td>
-                    <td><?= $row['prix'];?></td>
-                    <td><?= $row['typevente'];?></td>
+            <h2 class="text-center latable">Vos articles</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID de l'article</th>
+                        <th>Photo</th>
+                        <th>Nom de l'article</th>
+                        <th>Description</th>
+                        <th>Catégorie</th>
+                        <th>Prix</th>
+                        <th>Type de vente</th>
+                        <th>Action</th>
+                        <th>En ligne jusqu'à</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while($row=$result->fetch_assoc()){ ?>
+                    <tr>
+                        <td><?= $row['id_article'];?></td>
+                        <td><img src="photos/<?= $row['photo'];?>" width="35"></td>
+                        <td><?= $row['nom_article'];?></td>
+                        <td><?= $row['description1'];?></td>
+                        <td><?= $row['categorie'];?></td>
+                        <td><?= $row['prix'];?></td>
+                        <td><?= $row['typevente'];?></td>
+                        <td><?= $row['datefin'];?></td>
 
-                    <td>
-                        <a href="vendeur_crud.php?delete=<?=$row['id_article']; ?>"
-                            class="badge badge-danger">Supprimer</a>
-                    </td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                        <td>
+                            <a href="vendeur_crud.php?delete=<?=$row['id_article']; ?>"
+                                class="badge badge-danger">Supprimer</a>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
-    </div>
-
 
     </div>
     </div>
 
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <h6 class="text-uppercase font-weight-bold">Information additionnelle sur le site ECEbay</h6>
+                    <p>
+                        ECEbay, c'est quoi? C'est le projet ambitieux de 3 élèves de l'ECE Paris de réaliser un site
+                        d'enchère fonctionnel. Melant HTML, CSS, Bootstrap et MySql l'objectif était de faire un site fonctionnel.
+                        Venez découvrir notre sélection d'article qui ne vous laissera pas indiférant! Alors rejoins-nous
+                    </p>
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <p>
+                        37, quai de Grenelle, 75015 Paris, France <br>
+                        ecebay.mail@gmail.com <br>
+                        +33 06 45 75 92 06 <br>
+                        +33 07 37 38 91 04 <br>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-copyright text-center">&copy; 2020 Copyright | Droit d'auteur: Espada 
+            </div>
+    </footer>
 
 </body>
 
