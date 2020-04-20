@@ -1,6 +1,7 @@
-<?php 
+<?php session_start();
 
-  
+    $id_article="";
+    $nom_article="";
     $mail="";
     $mdp="";
     $updated=false;
@@ -16,8 +17,41 @@
 
     //Traitement 
 
+   
+
+    if(isset($_POST['ajouter_article'])){
+
+        $nom_article=$_POST['nom_article'];
+        $description1=$_POST['description1'];
+        $description2=$_POST['description2'];
+        $categorie=$_POST['categorie'];
+
+        $photo=$_FILES['photo']['name'];
+        $upload="photo_article/".$photo;
+
+        $query="INSERT INTO article(nom_article,description1,description2,categorie,photo)VALUES(?,?,?,?,?)";
+        $statement=$connexion->prepare($query);
+        $statement->bind_param("sssss",$nom_article,$description1,$description2,$categorie,$upload);
+        $result = $statement->execute();
+        
+        move_uploaded_file($_FILES['photo']['tmp_name'], $upload);
+
+        //header('')
+
+        //empêche la redirection vers un onglet vide après le traitement php
+        if ($result)
+        {   
+        // Successful popup message, redirected back to view contacts
+        echo "<script type='text/javascript'>alert('Successful - article ajouté!'); window.location.href = 'admin_crud_article.php';</script>";
+        }
+        else
+        {
+        // Unsuccessful popup message, redirected back to view contacts
+        echo "<script type='text/javascript'>alert('Unsuccessful - ERROR!'); window.location.href = 'admin_crud_article.php';</script>";
+        }
 
         
+    }
 
     if(isset($_POST['ajouterarticle'])){
         
@@ -55,7 +89,6 @@
         
 
     }
-
 
 
     if(isset($_GET['delete'])){

@@ -118,6 +118,15 @@
                             <a href="../back/paiement_screen.php">
                                 <button class="btn btn-block btn-success" name="payer">Payer</button>
                             </a>
+                            <?php
+                            $id_acheteur=(int)$_SESSION['idacheteur'];
+                            $query="SELECT SUM(prix) FROM article WHERE id_acheteur = '$id_acheteur' AND typevente = 'immediat'";
+                            $statement2=$connexion->prepare($query);
+                            $result2 = $statement2->execute();
+                            $result2=$statement2->get_result(); 
+                            $row=$result2->fetch_assoc();
+                            ?>
+                            <div>Total panier: <?=$row['SUM(prix)']?> euros</div>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 <?php
     include  'admin_crud_article.php';
-    session_start();
+    
 ?>
 
 <!DOCTYPE html>
@@ -18,10 +18,8 @@
 </head>
 
 <body>
-    <!-- NAVBAR -->
-
     <!-- Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: burlywood">
   <a class="navbar-brand" href="#">Menu</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -57,18 +55,9 @@
             <!-- Ajouter.modifier un article dans la table article-->
             <div class="col-md-4">
 
-                <h2 class="text-center">Ajouter/modifier un article</h2>
-                <form action="admin_crud_article.php" method="post" enctype="multipart/form-data" class="milieu">
-            
-                <div class="form-group">
-                        <tr>
-                            <td> <input type="radio" name="categorie" value="feraille" id="e">Ferraille ou trésor
-                                <input type="radio" name="categorie" value="musee" id="a">Bon pour le musée
-                                <input type="radio" name="categorie" value="vip" id="m"> Objet VIP</td>
-                        </tr>
-
-                    </div>
-
+                <h2 class="text-center">Ajouter un article</h2>
+                <form action="admin_crud_article.php" method="post" enctype="multipart/form-data">
+              
 
                 <div class="form-group ">
                     <input type="file" class="custom-file" name="photo">
@@ -90,32 +79,35 @@
                     <input type="text" class="form-control" placeholder="Grande description" name="description2">
                 </div>
 
-                
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Categorie" name="categorie">
+                </div>
+
+                <div class="form-group">
+                <input type="radio" name="card" value="enchere">Ferraille
+                <input type="radio" name="card" value="Achat immédiat">Musée
+                <input type="radio" name="card" value="Meilleure offre"> VIP</tr>
+                </div>
 
 
                 <div class="form-group">
                     <input type="number" class="form-control" placeholder="prix" name="prix">
                 </div>
 
-          <div class="form-group">
-                    <input type="radio" name="typevente" value="enchere">Enchère
-                    <input type="radio" name="typevente" value="immediat">Achat immédiat
-                    <input type="radio" name="typevente" value="offre">Meilleure offre
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="typevente" name="typevente">
                 </div>
+
                 
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary btn-dark btn-block" value="Ajouter"
-                        name="ajouteracheteur">
+                        name="ajouterarticle">
 
 
                 </div>
             </form>
 
-                
-
-                
-            </form>
             </div>
 
             <!-- DB article -->

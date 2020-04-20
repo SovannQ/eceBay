@@ -40,8 +40,19 @@ if(isset($_POST['paiement'])){
         
         //$sisi=$statement->fetch_assoc();
         //var_dump($row);
-        echo "PAIEMENT VALIDE, BRAVO, VOUS ALLEZ RECEVOIR UN MAIL DE CONFIRMATION POUR VOTRE COMMANDE.";
+        echo "<script type='text/javascript'>alert('Successful - Article(s) acheté(s)!'); window.location.href = '../front/achats/achats.php';</script>";
         //Envoyer un mail
+
+        $id_acheteur=$_SESSION['idacheteur'];
+        var_dump($id_acheteur);
+        
+        $query="DELETE FROM panier USING panier LEFT JOIN article  ON (panier.id_article = article.id_article) WHERE article.typevente='immediat';";
+        $statement =$connexion->prepare($query);
+        $result2=$statement->execute();
+
+        $query="DELETE FROM article WHERE typevente='immediat' AND id_acheteur='$id_acheteur'";
+        $statement =$connexion->prepare($query);
+        $result=$statement->execute();
 
         require_once('PHPMailer/PHPMailerAutoload.php');
 
@@ -64,24 +75,7 @@ if(isset($_POST['paiement'])){
             $result=$statement->get_result();
             $mail->Body="Bonjour,
             voici la confirmation de votre commande #$rand chez ECEBay. Nous vous en remercions. Voici le récapitulatif de la commande :
-                <html>
-      <head>
-       <title>Calendrier des anniversaires pour Août</title>
-      </head>
-      <body>
-       <p>Voici les anniversaires à venir au mois d\'Août !</p>
-       <table>
-            <tr>
-            <th>Numéro de l'article</th><th>Article</th><th>Prix</th>
-            </tr>
-            while($row=$result->fetch_assoc()){ 
-                <tr>
-                <td><?= $row['id_article'];?></td><td><?= $row['id_article'];?></td><td><?= $row['prix'];?></td>
-                </tr>
-            }
-       </table>
-      </body>
-     </html>";
+                ";
      
             //peut etre afficher l'adresse avec id_acheteur 
             //récap des items, ceux du panier SELECT * FROM panier where id_acheteur = $id_acheteur;
@@ -90,6 +84,7 @@ if(isset($_POST['paiement'])){
 
 
             $conf['show_php_errors'] = E_ALL & ~E_DEPRECATED;
+            
 
     }
     else{

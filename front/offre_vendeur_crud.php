@@ -54,6 +54,6 @@ if(isset($_POST['boutton']))
     $statement =$connexion->prepare($query);
     $result=$statement->execute();
 
-    echo "<script type='text/javascript'>alert('Successful - article supprimé!'); window.location.href = '../front/vendeur.php';</script>";
+    echo "<script type='text/javascript'>alert('Successful - article vendu!'); window.location.href = '../front/vendeur.php';</script>";
 }
 ?>

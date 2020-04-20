@@ -25,6 +25,8 @@ include 'connecter.php';
         $upload="photos/".$photo;
         $upload2="photos/".$photo2;
 
+        
+
         $id_vendeur=$_SESSION['idvendeur'];
         
     
